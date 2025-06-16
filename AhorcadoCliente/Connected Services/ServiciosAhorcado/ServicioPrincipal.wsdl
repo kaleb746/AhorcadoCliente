@@ -114,20 +114,14 @@
   <wsdl:message name="IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerEstadoPalabraResponse" />
   </wsdl:message>
-  <wsdl:message name="IGestorPrincipal_FinalizarPartida_InputMessage">
-    <wsdl:part name="parameters" element="tns:FinalizarPartida" />
-  </wsdl:message>
-  <wsdl:message name="IGestorPrincipal_FinalizarPartida_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FinalizarPartidaResponse" />
-  </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
   </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarIntentoLetra_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarIntentoLetra" />
   </wsdl:message>
-  <wsdl:message name="IGestorPrincipal_NotificarFinDePartida_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarFinDePartida" />
+  <wsdl:message name="IGestorPrincipal_NotificarFinPartida_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarFinPartida" />
   </wsdl:message>
   <wsdl:message name="IGestorPrincipal_Ping_InputMessage">
     <wsdl:part name="parameters" element="tns:Ping" />
@@ -188,18 +182,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabraResponse" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FinalizarPartida">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/FinalizarPartida" message="tns:IGestorPrincipal_FinalizarPartida_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/FinalizarPartidaResponse" message="tns:IGestorPrincipal_FinalizarPartida_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarIntentoLetra">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarIntentoLetra" message="tns:IGestorPrincipal_NotificarIntentoLetra_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="NotificarFinDePartida">
-      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarFinDePartida" message="tns:IGestorPrincipal_NotificarFinDePartida_OutputCallbackMessage" />
+    <wsdl:operation name="NotificarFinPartida">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarFinPartida" message="tns:IGestorPrincipal_NotificarFinPartida_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="Ping">
       <wsdl:input wsaw:Action="http://tempuri.org/IGestorPrincipal/Ping" message="tns:IGestorPrincipal_Ping_InputMessage" />
@@ -326,15 +316,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="FinalizarPartida">
-      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/FinalizarPartida" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" style="document" />
       <wsdl:output>
@@ -347,8 +328,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NotificarFinDePartida">
-      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarFinDePartida" style="document" />
+    <wsdl:operation name="NotificarFinPartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarFinPartida" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

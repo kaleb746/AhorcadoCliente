@@ -738,12 +738,6 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabraResponse")]
         System.Threading.Tasks.Task<string> ObtenerEstadoPalabraAsync(int idPartida);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/FinalizarPartida", ReplyAction="http://tempuri.org/IPartidaManager/FinalizarPartidaResponse")]
-        bool FinalizarPartida(int idPartida, int idJugadorGanador);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/FinalizarPartida", ReplyAction="http://tempuri.org/IPartidaManager/FinalizarPartidaResponse")]
-        System.Threading.Tasks.Task<bool> FinalizarPartidaAsync(int idPartida, int idJugadorGanador);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestorPrincipal/Ping", ReplyAction="http://tempuri.org/IGestorPrincipal/PingResponse")]
         bool Ping();
         
@@ -760,8 +754,8 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPartidaManager/NotificarIntentoLetra")]
         void NotificarIntentoLetra(char letra, bool acierto, string estadoActualPalabra);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPartidaManager/NotificarFinDePartida")]
-        void NotificarFinDePartida(string mensajeResultado, bool ganaste);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPartidaManager/NotificarFinPartida")]
+        void NotificarFinPartida(bool gano, string mensaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -894,14 +888,6 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         
         public System.Threading.Tasks.Task<string> ObtenerEstadoPalabraAsync(int idPartida) {
             return base.Channel.ObtenerEstadoPalabraAsync(idPartida);
-        }
-        
-        public bool FinalizarPartida(int idPartida, int idJugadorGanador) {
-            return base.Channel.FinalizarPartida(idPartida, idJugadorGanador);
-        }
-        
-        public System.Threading.Tasks.Task<bool> FinalizarPartidaAsync(int idPartida, int idJugadorGanador) {
-            return base.Channel.FinalizarPartidaAsync(idPartida, idJugadorGanador);
         }
         
         public bool Ping() {

@@ -11,9 +11,8 @@ namespace AhorcadoCliente.Utilidades
         public void NotificarIntentoLetra(char letra, bool acierto, string estadoActualPalabra)
         {
         }
-        public void NotificarFinDePartida(string mensaje, bool ganaste)
+        public void NotificarFinPartida(bool gano, string mensaje)
         {
         }
-
     }
 }

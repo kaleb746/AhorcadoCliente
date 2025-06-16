@@ -61,27 +61,22 @@ public class CallbackHandler : IGestorPrincipalCallback
             }
         });
     }
-    public void NotificarFinDePartida(string mensaje, bool ganaste)
+    public void NotificarFinPartida(bool gano, string mensaje)
     {
         Application.Current.Dispatcher.Invoke(() =>
         {
-            MessageBox.Show(
-                mensaje,
-                ganaste ? "¡Victoria!" : "Derrota",
-                MessageBoxButton.OK,
-                ganaste ? MessageBoxImage.Information : MessageBoxImage.Warning
-            );
-
-            // Redirigir al menú principal o cerrar la ventana de juego
             var ventana = Application.Current.Windows.OfType<JugarPartidaAnfitrion>().FirstOrDefault();
             if (ventana != null)
             {
+                MessageBox.Show(mensaje, "Fin de la partida", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                var menu = new MenuPrincipal();
+                menu.Show();
+
                 ventana.Close();
             }
-
-            // Mostrar menú principal (ajústalo si tienes otro nombre de clase)
-            var menu = new MenuPrincipal(); // Asegúrate de tener esta clase
-            menu.Show();
         });
     }
+
+
 }

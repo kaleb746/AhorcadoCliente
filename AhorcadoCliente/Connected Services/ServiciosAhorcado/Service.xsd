@@ -185,21 +185,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FinalizarPartida">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
-        <xs:element minOccurs="0" name="idJugadorGanador" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="FinalizarPartidaResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="FinalizarPartidaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="NotificarJugadorUnido">
     <xs:complexType>
       <xs:sequence>
@@ -216,11 +201,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="NotificarFinDePartida">
+  <xs:element name="NotificarFinPartida">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="mensajeResultado" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="ganaste" type="xs:boolean" />
+        <xs:element minOccurs="0" name="gano" type="xs:boolean" />
+        <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -140,5 +140,22 @@ namespace AhorcadoCliente.Vistas
                 }
             }
         }
+        public void MostrarFinPartida(bool gano, string mensaje)
+        {
+            MessageBox.Show(mensaje, gano ? "¡Victoria!" : "Derrota", MessageBoxButton.OK,
+                            gano ? MessageBoxImage.Information : MessageBoxImage.Warning);
+
+            foreach (var boton in FindVisualChildren<Button>(this))
+            {
+                if (boton.Content is string contenido && contenido.Length == 1)
+                {
+                    boton.IsEnabled = false;
+                }
+            }
+            var ventana = new MenuPrincipal();
+            ventana.Show();
+            this.Close();
+        }
+
     }
 }
