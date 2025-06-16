@@ -185,6 +185,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerHistorialDeJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idJugador" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHistorialDeJugadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Servicios.Dtos" minOccurs="0" name="ObtenerHistorialDeJugadorResult" nillable="true" type="q10:ArrayOfHistorialPartidaDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarJugadorUnido">
     <xs:complexType>
       <xs:sequence>
@@ -195,7 +209,7 @@
   <xs:element name="NotificarIntentoLetra">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="letra" type="q10:char" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="letra" type="q11:char" />
         <xs:element minOccurs="0" name="acierto" type="xs:boolean" />
         <xs:element minOccurs="0" name="estadoActualPalabra" nillable="true" type="xs:string" />
       </xs:sequence>

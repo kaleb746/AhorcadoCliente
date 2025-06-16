@@ -33,7 +33,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fecha"
                                     Binding="{Binding Fecha}"
-                                    Width="*"/>
+                                    Width="2*"/>
                 <DataGridTextColumn Header="Usuario"
                                     Binding="{Binding Usuario}"
                                     Width="*"/>

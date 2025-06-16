@@ -139,30 +139,24 @@ namespace AhorcadoCliente.Vistas
 
                 int idJugador = SesionActual.JugadorActual.Id;
 
-                // 1. Crear handler y cliente
-                var callbackHandler = new CallbackHandler(null); // Este usará JugarPartidaAnfitrion
+                var callbackHandler = new CallbackHandler(null); 
                 var context = new InstanceContext(callbackHandler);
                 var client = new GestorPrincipalClient(context);
 
                 try
                 {
-                    // 2. Crear partida en el servidor
                     int idPartida = await Task.Run(() => client.CrearPartida(idJugador, idPalabra));
 
                     if (idPartida > 0)
                     {
-                        // 3. Asignar datos necesarios al callback
                         callbackHandler.SetDatosPartida(idPartida, idJugador, client);
 
-                        // 4. Guardar referencias en sesión
                         SesionActual.ClienteWCF = client;
                         SesionActual.CallbackAnfitrion = callbackHandler;
 
-                        // 5. Confirmación al anfitrión
                         MessageBox.Show("Partida creada exitosamente. Esperando a que otro jugador se una...",
                                         "Partida creada", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        // 6. Cerrar esta ventana, pero NO abrir un nuevo menú
                         this.Close();
                     }
                     else if (idPartida == -1)
@@ -188,10 +182,6 @@ namespace AhorcadoCliente.Vistas
                 MessageBox.Show("Seleccione una palabra para crear la partida.", "Campo obligatorio", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
-
-
-
         private void ActualizarEstadoBotonCrearPartida()
         {
             bool dificultadSeleccionada = cbDificultades.SelectedItem != null;

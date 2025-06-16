@@ -114,6 +114,12 @@
   <wsdl:message name="IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerEstadoPalabraResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerHistorialDeJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHistorialDeJugador" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerHistorialDeJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerHistorialDeJugadorResponse" />
+  </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
   </wsdl:message>
@@ -181,6 +187,10 @@
     <wsdl:operation name="ObtenerEstadoPalabra">
       <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabraResponse" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHistorialDeJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador" message="tns:IGestorPrincipal_ObtenerHistorialDeJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugadorResponse" message="tns:IGestorPrincipal_ObtenerHistorialDeJugador_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
@@ -309,6 +319,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerEstadoPalabra">
       <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerHistorialDeJugador">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

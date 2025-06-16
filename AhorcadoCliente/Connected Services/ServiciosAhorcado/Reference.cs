@@ -654,6 +654,99 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistorialPartidaDTO", Namespace="http://schemas.datacontract.org/2004/07/Servicios.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class HistorialPartidaDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DificultadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResultadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dificultad {
+            get {
+                return this.DificultadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DificultadField, value) != true)) {
+                    this.DificultadField = value;
+                    this.RaisePropertyChanged("Dificultad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Resultado {
+            get {
+                return this.ResultadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResultadoField, value) != true)) {
+                    this.ResultadoField = value;
+                    this.RaisePropertyChanged("Resultado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiciosAhorcado.IGestorPrincipal", CallbackContract=typeof(AhorcadoCliente.ServiciosAhorcado.IGestorPrincipalCallback))]
     public interface IGestorPrincipal {
@@ -737,6 +830,12 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabraResponse")]
         System.Threading.Tasks.Task<string> ObtenerEstadoPalabraAsync(int idPartida);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugadorResponse")]
+        AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[] ObtenerHistorialDeJugador(int idJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugadorResponse")]
+        System.Threading.Tasks.Task<AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[]> ObtenerHistorialDeJugadorAsync(int idJugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestorPrincipal/Ping", ReplyAction="http://tempuri.org/IGestorPrincipal/PingResponse")]
         bool Ping();
@@ -888,6 +987,14 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         
         public System.Threading.Tasks.Task<string> ObtenerEstadoPalabraAsync(int idPartida) {
             return base.Channel.ObtenerEstadoPalabraAsync(idPartida);
+        }
+        
+        public AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[] ObtenerHistorialDeJugador(int idJugador) {
+            return base.Channel.ObtenerHistorialDeJugador(idJugador);
+        }
+        
+        public System.Threading.Tasks.Task<AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[]> ObtenerHistorialDeJugadorAsync(int idJugador) {
+            return base.Channel.ObtenerHistorialDeJugadorAsync(idJugador);
         }
         
         public bool Ping() {
