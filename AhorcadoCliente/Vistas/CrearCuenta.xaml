@@ -1,0 +1,72 @@
+﻿<Window x:Class="AhorcadoCliente.Vistas.CrearCuenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AhorcadoCliente.Vistas"
+        mc:Ignorable="d"
+        Title="CrearCuenta" Height="530" Width="500"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Encabezado -->
+        <StackPanel Grid.Row="0" Margin="0,10,0,20" HorizontalAlignment="Center">
+            <TextBlock x:Name="TxtTituloPrincipal"
+               Text="Registrar Usuario"
+               FontSize="24" FontWeight="Bold" Foreground="#2C3E50" TextAlignment="Center"/>
+            <TextBlock x:Name="TxtSubtitulo"
+               Text="Completa los siguientes campos para crear tu cuenta"
+               FontSize="14" Foreground="Gray" TextAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Formulario -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" MaxHeight="500">
+            <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Apellido paterno -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Apellido materno -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Fecha -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- ComboBox y Eliminar -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Correo / Usuario -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Contraseña -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Botones -->
+                </Grid.RowDefinitions>
+                <!-- Primera Columna -->
+                <TextBox Grid.Row="0" Grid.Column="0" Style="{DynamicResource TextBoxStyle}" Tag="Nombres" x:Name="TbNombre" Margin="10" MinWidth="200"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Style="{DynamicResource TextBoxStyle}" Tag="Apellido Paterno" x:Name="TbApellidoPaterno" Margin="10" MinWidth="200"/>
+                <TextBox Grid.Row="2" Grid.Column="0" Style="{DynamicResource TextBoxStyle}" Tag="Apellido Materno" x:Name="TbApellidoMaterno" Margin="10" MinWidth="200"/>
+                <DatePicker Grid.Row="3" Grid.Column="0" Style="{DynamicResource CustomDatePickerStyle}" x:Name="DpFechaNacimiento" Margin="10" MinWidth="200" ToolTip="Selecciona tu fecha de nacimiento" Height="42"/>
+                <Button Grid.Row="4" Grid.Column="0" x:Name="BtnEliminar" Content="Eliminar perfil" Style="{DynamicResource DangerButtonStyle}" Margin="10" MinWidth="200" Click="btnClicEliminar" Visibility="Collapsed" Height="42"/>
+                <Button Grid.Row="7" Grid.Column="0" Content="Regresar" Style="{DynamicResource SecondaryButtonNoIconStyle}" Margin="10" MinWidth="200" Click="btnClicRegresar"/>
+
+                <!-- Segunda Columna -->
+                <TextBox Grid.Row="0" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" Tag="Teléfono" x:Name="TbTelefono" Margin="10" MinWidth="200"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" Tag="Nombre de usuario" x:Name="TbUsuario" Margin="10" MinWidth="200"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" Tag="Correo electrónico" x:Name="TbCorreo" Margin="10" MinWidth="200"/>
+                <PasswordBox Grid.Row="3" Grid.Column="1" Style="{DynamicResource PasswordBoxStyle}" Tag="Contraseña" x:Name="PfContraseña" Margin="10" MinWidth="200"/>
+                <ComboBox Grid.Row="4" Grid.Column="1" x:Name="CbIdioma" Tag="Idioma"  Margin="10" MinWidth="200" Style="{DynamicResource ComboBoxStyle}" Visibility="Collapsed">
+                    <ComboBoxItem Content="Español"/>
+                    <ComboBoxItem Content="Inglés"/>
+                </ComboBox>
+                <Button Grid.Row="7" Grid.Column="1" x:Name="BtnRegistrar" Content="Registrarse" Style="{DynamicResource PrimaryButtonNoIconStyle}" Margin="10" MinWidth="200" Click="btnClicRegistrarJugador" IsEnabled="False"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

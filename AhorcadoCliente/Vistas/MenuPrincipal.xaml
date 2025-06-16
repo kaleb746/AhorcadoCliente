@@ -1,0 +1,72 @@
+﻿<Window x:Class="AhorcadoCliente.Vistas.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AhorcadoCliente.Vistas"
+        mc:Ignorable="d"
+        Title="MenuPrincipal" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/AhorcadoCliente;component/Recursos/Iconos/fondo_menu.png" Stretch="Fill"/>
+        </Grid.Background>
+        
+        <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
+                Content="Configuración"
+                Margin="30"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnClicConfiguracion"/>
+
+        <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
+                Content="Ver Ranking"
+                Margin="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="btnClicMostrarRanking"/>
+
+        <Border Background="#8de3fa" CornerRadius="20" Padding="30"
+        Width="390" Height="270" 
+        HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Color="Black"
+                          Opacity="0.4"
+                          ShadowDepth="8"
+                          BlurRadius="15"
+                          Direction="270"/>
+            </Border.Effect>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <Button Content="Crear partida"
+                Margin="0,0,0,25"
+                Height="50"
+                FontSize="15"
+                Foreground="White"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnClicCrearPartida"
+                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+
+                <Button Content="Buscar partida"
+                Margin="0,0,0,25"
+                Height="50"
+                FontSize="15"
+                Foreground="White"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnClicBuscarPartida"
+                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+
+                <Button Content="Historial de partidas"
+                Height="50"
+                FontSize="15"
+                Foreground="White"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnClicHistorialPartidas"
+                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

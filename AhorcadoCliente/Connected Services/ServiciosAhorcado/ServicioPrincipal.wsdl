@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServicioPrincipal" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGestorPrincipal_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8082/Service?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8082/Service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8082/Service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Servicios.Dtos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGestorPrincipal_RegistrarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_RegistrarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ActualizarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ActualizarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_EliminarJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_EliminarJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarJugadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerTodosLosJugadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosJugadores" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerTodosLosJugadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosLosJugadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_IniciarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_IniciarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerCategorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCategorias" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerCategorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCategoriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerDificultades_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDificultades" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerDificultades_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDificultadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPalabrasPorCategoriaYDificultad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPalabrasPorCategoriaYDificultad" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPalabrasPorCategoriaYDificultad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPalabrasPorCategoriaYDificultadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_CrearPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPartida" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_CrearPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPartidasDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPartidasDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPartidasDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPartidasDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_UnirseAPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseAPartida" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_UnirseAPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseAPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_IntentarLetra_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntentarLetra" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_IntentarLetra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntentarLetraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerEstadoPalabra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadoPalabra" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadoPalabraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_FinalizarPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarPartida" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_FinalizarPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizarPartidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_NotificarIntentoLetra_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarIntentoLetra" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_NotificarFinDePartida_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarFinDePartida" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGestorPrincipal">
+    <wsdl:operation name="RegistrarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugadorManager/RegistrarJugador" message="tns:IGestorPrincipal_RegistrarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugadorManager/RegistrarJugadorResponse" message="tns:IGestorPrincipal_RegistrarJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugadorManager/ActualizarJugador" message="tns:IGestorPrincipal_ActualizarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugadorManager/ActualizarJugadorResponse" message="tns:IGestorPrincipal_ActualizarJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugadorManager/EliminarJugador" message="tns:IGestorPrincipal_EliminarJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugadorManager/EliminarJugadorResponse" message="tns:IGestorPrincipal_EliminarJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosJugadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJugadorManager/ObtenerTodosLosJugadores" message="tns:IGestorPrincipal_ObtenerTodosLosJugadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJugadorManager/ObtenerTodosLosJugadoresResponse" message="tns:IGestorPrincipal_ObtenerTodosLosJugadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISesionManager/IniciarSesion" message="tns:IGestorPrincipal_IniciarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISesionManager/IniciarSesionResponse" message="tns:IGestorPrincipal_IniciarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerCategorias" message="tns:IGestorPrincipal_ObtenerCategorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerCategoriasResponse" message="tns:IGestorPrincipal_ObtenerCategorias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDificultades">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerDificultades" message="tns:IGestorPrincipal_ObtenerDificultades_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerDificultadesResponse" message="tns:IGestorPrincipal_ObtenerDificultades_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPalabrasPorCategoriaYDificultad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerPalabrasPorCategoriaYDificultad" message="tns:IGestorPrincipal_ObtenerPalabrasPorCategoriaYDificultad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPalabraManager/ObtenerPalabrasPorCategoriaYDificultadResponse" message="tns:IGestorPrincipal_ObtenerPalabrasPorCategoriaYDificultad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/CrearPartida" message="tns:IGestorPrincipal_CrearPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/CrearPartidaResponse" message="tns:IGestorPrincipal_CrearPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPartidasDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerPartidasDisponibles" message="tns:IGestorPrincipal_ObtenerPartidasDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerPartidasDisponiblesResponse" message="tns:IGestorPrincipal_ObtenerPartidasDisponibles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnirseAPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/UnirseAPartida" message="tns:IGestorPrincipal_UnirseAPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/UnirseAPartidaResponse" message="tns:IGestorPrincipal_UnirseAPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntentarLetra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/IntentarLetra" message="tns:IGestorPrincipal_IntentarLetra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/IntentarLetraResponse" message="tns:IGestorPrincipal_IntentarLetra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoPalabra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabraResponse" message="tns:IGestorPrincipal_ObtenerEstadoPalabra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/FinalizarPartida" message="tns:IGestorPrincipal_FinalizarPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/FinalizarPartidaResponse" message="tns:IGestorPrincipal_FinalizarPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarJugadorUnido">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarIntentoLetra">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarIntentoLetra" message="tns:IGestorPrincipal_NotificarIntentoLetra_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarFinDePartida">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarFinDePartida" message="tns:IGestorPrincipal_NotificarFinDePartida_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestorPrincipal/Ping" message="tns:IGestorPrincipal_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestorPrincipal/PingResponse" message="tns:IGestorPrincipal_Ping_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGestorPrincipal" type="tns:IGestorPrincipal">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGestorPrincipal_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegistrarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugadorManager/RegistrarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugadorManager/ActualizarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IJugadorManager/EliminarJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosLosJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IJugadorManager/ObtenerTodosLosJugadores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ISesionManager/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCategorias">
+      <soap12:operation soapAction="http://tempuri.org/IPalabraManager/ObtenerCategorias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDificultades">
+      <soap12:operation soapAction="http://tempuri.org/IPalabraManager/ObtenerDificultades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPalabrasPorCategoriaYDificultad">
+      <soap12:operation soapAction="http://tempuri.org/IPalabraManager/ObtenerPalabrasPorCategoriaYDificultad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearPartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/CrearPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPartidasDisponibles">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerPartidasDisponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnirseAPartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/UnirseAPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntentarLetra">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/IntentarLetra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoPalabra">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerEstadoPalabra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizarPartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/FinalizarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarJugadorUnido">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarIntentoLetra">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarIntentoLetra" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarFinDePartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/NotificarFinDePartida" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/IGestorPrincipal/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioPrincipal">
+    <wsdl:port name="NetTcpBinding_IGestorPrincipal" binding="tns:NetTcpBinding_IGestorPrincipal">
+      <soap12:address location="net.tcp://localhost:8081/Service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8081/Service</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-HKQ7CK7\Kaleb</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

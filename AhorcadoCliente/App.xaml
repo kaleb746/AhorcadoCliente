@@ -1,0 +1,20 @@
+﻿<Application x:Class="AhorcadoCliente.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AhorcadoCliente"
+             StartupUri="Vistas/IniciarSesion.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/ElementosUI.xaml" />
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/Animaciones.xaml"/>
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosLabel.xaml" />
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosTextBox.xaml" />
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosBotones.xaml" />
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosScroller.xaml"/>
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosDataGrid.xaml" />
+                <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstiloWrapPanel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
