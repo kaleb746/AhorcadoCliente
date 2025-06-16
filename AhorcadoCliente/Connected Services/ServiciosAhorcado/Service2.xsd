@@ -86,4 +86,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PartidaDisponibleDTO" nillable="true" type="tns:PartidaDisponibleDTO" />
+  <xs:complexType name="ArrayOfHistorialPartidaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistorialPartidaDTO" nillable="true" type="tns:HistorialPartidaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistorialPartidaDTO" nillable="true" type="tns:ArrayOfHistorialPartidaDTO" />
+  <xs:complexType name="HistorialPartidaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dificultad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Resultado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistorialPartidaDTO" nillable="true" type="tns:HistorialPartidaDTO" />
 </xs:schema>

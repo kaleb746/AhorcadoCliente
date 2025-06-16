@@ -62,7 +62,9 @@ namespace AhorcadoCliente.Vistas
 
         private void btnClicHistorialPartidas(object sender, RoutedEventArgs e)
         {
-
+            var ventana = new HistorialPartida();
+            ventana.Owner = this;
+            ventana.ShowDialog();
         }
     }
 }

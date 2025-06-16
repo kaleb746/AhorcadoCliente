@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\Dificultad.cs" />
+    <Compile Include="Modelo\HistorialPartida.cs" />
     <Compile Include="Modelo\Jugador.cs" />
     <Compile Include="Modelo\Palabra.cs" />
     <Compile Include="Modelo\PartidaDisponible.cs" />
@@ -213,6 +214,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosAhorcado\AhorcadoCliente.ServiciosAhorcado.DificultadDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiciosAhorcado\AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiciosAhorcado\AhorcadoCliente.ServiciosAhorcado.JugadorDTO.datasource">

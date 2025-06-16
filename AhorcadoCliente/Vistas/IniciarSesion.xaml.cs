@@ -50,7 +50,10 @@ namespace AhorcadoCliente.Vistas
                     Contrasena = jugador.Contrasena,
                     Puntaje = jugador.Puntaje
                 };
+                SesionActual.ClienteWCF = new GestorPrincipalClient(context);
+
                 MessageBox.Show($"¡Bienvenido, {jugador.Nombre}!", "Inicio exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 var ventanaPrincipal = new MenuPrincipal(); 
                 ventanaPrincipal.Show();
                 Close();
