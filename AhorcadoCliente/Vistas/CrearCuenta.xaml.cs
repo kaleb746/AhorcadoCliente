@@ -41,7 +41,6 @@ namespace AhorcadoCliente.Vistas
             TxtTituloPrincipal.Text = Application.Current.TryFindResource("CrearCuenta_Titulo_EditarPerfil")?.ToString() ?? "Editar Perfil";
             TxtSubtitulo.Text = Application.Current.TryFindResource("CrearCuenta_Descripcion_EditarPerfil")?.ToString() ?? "Actualiza tu información personal";
             BtnRegistrar.Content = Application.Current.TryFindResource("CrearCuenta_Btn_GuardarCambios")?.ToString() ?? "Guardar cambios";
-            BtnEliminar.Visibility = Visibility.Visible;
         }
         private void CargarDatosJugador(Jugador jugador)
         {
@@ -59,8 +58,6 @@ namespace AhorcadoCliente.Vistas
         {
             this.Close();
         }
-
-
         private void ValidarEntrada()
         {
             var validaciones = new (TextBox, string, int)[]
