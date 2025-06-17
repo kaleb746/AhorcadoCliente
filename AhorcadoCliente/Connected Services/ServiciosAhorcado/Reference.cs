@@ -802,10 +802,10 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         System.Threading.Tasks.Task<AhorcadoCliente.ServiciosAhorcado.PalabraDTO[]> ObtenerPalabrasPorCategoriaYDificultadAsync(int idCategoria, int idDificultad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/CrearPartida", ReplyAction="http://tempuri.org/IPartidaManager/CrearPartidaResponse")]
-        int CrearPartida(int idJugador, int idPalabra);
+        int CrearPartida(int idJugador, int idPalabra, string idioma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/CrearPartida", ReplyAction="http://tempuri.org/IPartidaManager/CrearPartidaResponse")]
-        System.Threading.Tasks.Task<int> CrearPartidaAsync(int idJugador, int idPalabra);
+        System.Threading.Tasks.Task<int> CrearPartidaAsync(int idJugador, int idPalabra, string idioma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerPartidasDisponibles", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerPartidasDisponiblesResponse")]
         AhorcadoCliente.ServiciosAhorcado.PartidaDisponibleDTO[] ObtenerPartidasDisponibles(int idJugadorActual);
@@ -949,12 +949,12 @@ namespace AhorcadoCliente.ServiciosAhorcado {
             return base.Channel.ObtenerPalabrasPorCategoriaYDificultadAsync(idCategoria, idDificultad);
         }
         
-        public int CrearPartida(int idJugador, int idPalabra) {
-            return base.Channel.CrearPartida(idJugador, idPalabra);
+        public int CrearPartida(int idJugador, int idPalabra, string idioma) {
+            return base.Channel.CrearPartida(idJugador, idPalabra, idioma);
         }
         
-        public System.Threading.Tasks.Task<int> CrearPartidaAsync(int idJugador, int idPalabra) {
-            return base.Channel.CrearPartidaAsync(idJugador, idPalabra);
+        public System.Threading.Tasks.Task<int> CrearPartidaAsync(int idJugador, int idPalabra, string idioma) {
+            return base.Channel.CrearPartidaAsync(idJugador, idPalabra, idioma);
         }
         
         public AhorcadoCliente.ServiciosAhorcado.PartidaDisponibleDTO[] ObtenerPartidasDisponibles(int idJugadorActual) {

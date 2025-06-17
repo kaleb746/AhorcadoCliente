@@ -24,27 +24,35 @@ namespace AhorcadoCliente
 
         public void CambiarIdioma(string codigoCultura)
         {
-            var cultura = new CultureInfo(codigoCultura);
+            string nombreArchivo;
+
+            if (codigoCultura == "en")
+                nombreArchivo = "en-US";
+            else if (codigoCultura == "es")
+                nombreArchivo = "es-MX";
+            else
+                nombreArchivo = codigoCultura;
+
+            var cultura = new CultureInfo(nombreArchivo);
             Thread.CurrentThread.CurrentCulture = cultura;
             Thread.CurrentThread.CurrentUICulture = cultura;
 
             var diccionario = new ResourceDictionary
             {
-                Source = new Uri($"Properties/Strings.{cultura.Name}.xaml", UriKind.Relative)
+                Source = new Uri($"Properties/Strings.{nombreArchivo}.xaml", UriKind.Relative)
             };
 
-            // Reemplaza el diccionario anterior
             var diccionarioExistente = Resources.MergedDictionaries
-                .FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("Resources."));
+                .FirstOrDefault(d => d.Source != null && d.Source.OriginalString.Contains("Strings."));
             if (diccionarioExistente != null)
             {
                 Resources.MergedDictionaries.Remove(diccionarioExistente);
             }
-            Resources.MergedDictionaries.Add(diccionario);
 
-            // Lanza el evento
+            Resources.MergedDictionaries.Add(diccionario);
             IdiomaCambiado?.Invoke();
         }
+
     }
 
 }

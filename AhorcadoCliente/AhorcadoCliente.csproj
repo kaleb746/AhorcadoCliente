@@ -288,5 +288,8 @@
     <Resource Include="Recursos\Iconos\Dibujo_Intento6.png" />
     <Resource Include="Recursos\Iconos\Dibujo_Intento1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Iconos\icono-eliminar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
