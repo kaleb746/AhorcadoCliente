@@ -22,13 +22,16 @@
     <sys:String x:Key="Msg_Error_ConexionServidor">Error de comunicación con el servidor: {0}</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorConexion">Error de conexión</sys:String>
 
-    <sys:String x:Key="MenuPrincipal_Configuracion">Configuración</sys:String>
+    <sys:String x:Key="MenuPrincipal_Editar">Editar Perfil</sys:String>
     <sys:String x:Key="MenuPrincipal_VerRanking">Ver Ranking</sys:String>
     <sys:String x:Key="MenuPrincipal_CrearPartida">Crear partida</sys:String>
     <sys:String x:Key="MenuPrincipal_BuscarPartida">Buscar partida</sys:String>
     <sys:String x:Key="MenuPrincipal_Historial">Historial de partidas</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorSesion">Error</sys:String>
     <sys:String x:Key="Msg_Error_SesionNoEncontrada">No se encontró la sesión del jugador.</sys:String>
+    <sys:String x:Key="MenuPrincipal_CerrarSesion">Salir</sys:String>
+    <sys:String x:Key="Msg_Titulo_CerrarSesion">Cerrar sesión</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ConfirmarCerrarSesion">¿Deseas cerrar sesión?</sys:String>
 
     <sys:String x:Key="CrearCuenta_Titulo">Registrar Usuario</sys:String>
     <sys:String x:Key="CrearCuenta_Subtitulo">Completa los siguientes campos para crear tu cuenta</sys:String>

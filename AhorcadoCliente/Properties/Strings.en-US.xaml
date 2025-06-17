@@ -29,13 +29,16 @@
     <sys:String x:Key="Msg_Error_ConexionServidor">Server communication error: {0}</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorConexion">Connection error</sys:String>
 
-    <sys:String x:Key="MenuPrincipal_Configuracion">Settings</sys:String>
+    <sys:String x:Key="MenuPrincipal_Editar">Edit Profile</sys:String>
     <sys:String x:Key="MenuPrincipal_VerRanking">View Ranking</sys:String>
     <sys:String x:Key="MenuPrincipal_CrearPartida">Create Game</sys:String>
     <sys:String x:Key="MenuPrincipal_BuscarPartida">Find Game</sys:String>
     <sys:String x:Key="MenuPrincipal_Historial">Game History</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorSesion">Error</sys:String>
     <sys:String x:Key="Msg_Error_SesionNoEncontrada">Player session not found.</sys:String>
+    <sys:String x:Key="MenuPrincipal_CerrarSesion">Sign Out</sys:String>
+    <sys:String x:Key="Msg_Titulo_CerrarSesion">Sign Out</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ConfirmarCerrarSesion">Do you want to log out?</sys:String>
 
     <sys:String x:Key="CrearCuenta_Titulo">Register User</sys:String>
     <sys:String x:Key="CrearCuenta_Subtitulo">Fill out the fields below to create your account</sys:String>

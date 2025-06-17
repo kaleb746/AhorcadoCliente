@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AhorcadoCliente.Vistas"
         mc:Ignorable="d"
-        Title="CrearCuenta" Height="530" Width="500"
+        Title="CrearCuenta" Height="500" Width="500"
         WindowStartupLocation="CenterScreen">
     
     <Grid Margin="20">
@@ -46,7 +46,6 @@
                 <TextBox Grid.Row="1" Grid.Column="0" Style="{DynamicResource TextBoxStyle}" Tag="{DynamicResource CrearCuenta_ApellidoPaterno}" x:Name="TbApellidoPaterno" Margin="10" MinWidth="200"/>
                 <TextBox Grid.Row="2" Grid.Column="0" Style="{DynamicResource TextBoxStyle}" Tag="{DynamicResource CrearCuenta_ApellidoMaterno}" x:Name="TbApellidoMaterno" Margin="10" MinWidth="200"/>
                 <DatePicker Grid.Row="3" Grid.Column="0" Style="{DynamicResource CustomDatePickerStyle}" x:Name="DpFechaNacimiento" Margin="10" MinWidth="200" ToolTip="{DynamicResource CrearCuenta_FechaNacimiento}" Height="42"/>
-                <Button Grid.Row="4" Grid.Column="0" x:Name="BtnEliminar" Content="{DynamicResource CrearCuenta_EliminarPerfil}" Style="{DynamicResource DangerButtonStyle}" Margin="10" MinWidth="200" Click="btnClicEliminar" Visibility="Collapsed" Height="42"/>
                 <Button Grid.Row="7" Grid.Column="0" Content="{DynamicResource CrearCuenta_Regresar}" Style="{DynamicResource SecondaryButtonNoIconStyle}" Margin="10" MinWidth="200" Click="btnClicRegresar"/>
 
                 <!-- Segunda Columna -->

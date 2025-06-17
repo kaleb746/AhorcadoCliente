@@ -13,13 +13,20 @@
             <ImageBrush ImageSource="/AhorcadoCliente;component/Recursos/Iconos/fondo_menu.png" Stretch="Fill"/>
         </Grid.Background>
 
+        <!-- Botón Configuración -->
         <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
-                Content="{DynamicResource MenuPrincipal_Configuracion}"
+                Content="{DynamicResource MenuPrincipal_Editar}"
                 Margin="30"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Click="btnClicConfiguracion"/>
-
+                Click="btnClicEditar"/>
+        <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
+                Content="{DynamicResource MenuPrincipal_CerrarSesion}"
+                Margin="30,82,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnClicCerrarSesion" Height="32" Width="83"/>
+        <!-- Botón Ranking -->
         <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
                 Content="{DynamicResource MenuPrincipal_VerRanking}"
                 Margin="30"
@@ -27,6 +34,7 @@
                 VerticalAlignment="Top"
                 Click="btnClicMostrarRanking"/>
 
+        <!-- Panel central con botones -->
         <Border Background="#8de3fa" CornerRadius="20" Padding="30"
                 Width="390" Height="270" 
                 HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -69,5 +77,18 @@
                         Style="{StaticResource SecondaryButtonNoIconStyle}"/>
             </StackPanel>
         </Border>
+
+        <!-- Botón eliminar transparente con ícono -->
+        <Button Width="50" Height="50"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Background="Transparent"
+                BorderThickness="0"
+                Cursor="Hand"
+                Click="btnClicEliminar">
+            <Image Source="/AhorcadoCliente;component/Recursos/Iconos/icono-eliminar.png"
+                   Stretch="Uniform"/>
+        </Button>
     </Grid>
 </Window>
