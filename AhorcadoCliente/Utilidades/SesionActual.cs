@@ -15,6 +15,13 @@ namespace AhorcadoCliente.Utilidades
         public static GestorPrincipalClient ClienteWCF { get; set; }
         public static CallbackHandler CallbackAnfitrion { get; set; }
         public static Window VentanaMenuPrincipal { get; set; }
-        public static string IdiomaActual { get; set; }
+
+        private static string _idiomaActual = "es"; 
+        public static string IdiomaActual
+        {
+            get => _idiomaActual;
+            set => _idiomaActual = string.IsNullOrEmpty(value) ? "es" : value;
+        }
+
     }
 }
