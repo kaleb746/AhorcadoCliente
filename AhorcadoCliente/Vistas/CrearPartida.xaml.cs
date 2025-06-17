@@ -22,13 +22,13 @@ namespace AhorcadoCliente.Vistas
             var context = new InstanceContext(new CallbackDummy());
             _client = new GestorPrincipalClient(context);
             _ = CargarCategoriasYDificultadesAsync();
+            App.IdiomaCambiado += RefrescarCombos;
         }
 
         private async Task CargarCategoriasYDificultadesAsync()
         {
             var context = new InstanceContext(new CallbackDummy());
             var client = new GestorPrincipalClient(context);
-
 
             try
             {
@@ -57,11 +57,11 @@ namespace AhorcadoCliente.Vistas
             }
             catch
             {
-                MessageBox.Show("Error al cargar categorías o dificultades.");
+                MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorCategoriasDificultades", MessageDialog.DialogType.ERROR, this);
             }
             finally
             {
-                if (client.State == System.ServiceModel.CommunicationState.Faulted)
+                if (client.State == CommunicationState.Faulted)
                     client.Abort();
                 else
                     client.Close();
@@ -111,18 +111,17 @@ namespace AhorcadoCliente.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("Error al cargar las palabras.");
+                    MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorPalabras", MessageDialog.DialogType.ERROR, this);
                 }
                 finally
                 {
-                    if (client.State == System.ServiceModel.CommunicationState.Faulted)
+                    if (client.State == CommunicationState.Faulted)
                         client.Abort();
                     else
                         client.Close();
                 }
             }
         }
-
         private void btnClicRegresar(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -133,13 +132,12 @@ namespace AhorcadoCliente.Vistas
             {
                 if (SesionActual.JugadorActual == null)
                 {
-                    MessageBox.Show("No hay un jugador activo en sesión.", "Error de sesión", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_ErrorSesion", "Msg_Descripcion_ErrorSesion", MessageDialog.DialogType.ERROR, this);
                     return;
                 }
 
                 int idJugador = SesionActual.JugadorActual.Id;
-
-                var callbackHandler = new CallbackHandler(null); 
+                var callbackHandler = new CallbackHandler(null);
                 var context = new InstanceContext(callbackHandler);
                 var client = new GestorPrincipalClient(context);
 
@@ -154,32 +152,28 @@ namespace AhorcadoCliente.Vistas
                         SesionActual.ClienteWCF = client;
                         SesionActual.CallbackAnfitrion = callbackHandler;
 
-                        MessageBox.Show("Partida creada exitosamente. Esperando a que otro jugador se una...",
-                                        "Partida creada", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                        MessageDialog.Show("Msg_Titulo_CreacionPartida", "Msg_Descripcion_CreacionPartida", MessageDialog.DialogType.INFO, this);
                         this.Close();
                     }
                     else if (idPartida == -1)
                     {
-                        MessageBox.Show("El estado 'En espera' no existe en el sistema.", "Error de datos", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        MessageDialog.Show("Msg_Titulo_EstadoNoExiste", "Msg_Descripcion_EstadoNoExiste", MessageDialog.DialogType.WARNING, this);
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrió un error al crear la partida.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorCrearPartida", MessageDialog.DialogType.ERROR, this);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error inesperado: {ex.Message}", "Excepción", MessageBoxButton.OK, MessageBoxImage.Error);
-                    if (client.State == CommunicationState.Faulted)
-                        client.Abort();
-                    else
-                        client.Close();
+                    string mensaje = string.Format(
+                        Application.Current.TryFindResource("Msg_Descripcion_ErrorInesperado")?.ToString() ?? "Error inesperado: {0}", ex.Message);
+                    MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione una palabra para crear la partida.", "Campo obligatorio", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageDialog.Show("Msg_Titulo_CampoObligatorio", "Msg_Descripcion_SeleccionarPalabra", MessageDialog.DialogType.WARNING, this);
             }
         }
         private void ActualizarEstadoBotonCrearPartida()
@@ -189,6 +183,12 @@ namespace AhorcadoCliente.Vistas
             bool palabraSeleccionada = cbPalabras.SelectedItem != null;
 
             BtnCrearSala.IsEnabled = dificultadSeleccionada && categoriaSeleccionada && palabraSeleccionada;
+        }
+        private void RefrescarCombos()
+        {
+            cbCategorias.Items.Refresh();
+            cbDificultades.Items.Refresh();
+            cbPalabras.Items.Refresh();
         }
 
     }

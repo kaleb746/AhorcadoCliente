@@ -13,7 +13,8 @@
         </Grid.RowDefinitions>
 
         <!-- Título -->
-        <TextBlock Grid.Row="0" Text="Ranking Jugadores"
+        <TextBlock Grid.Row="0" 
+                   Text="{DynamicResource Ranking_Titulo}" 
                    FontSize="20" FontWeight="Bold"
                    HorizontalAlignment="Center"
                    Margin="0,0,0,10"
@@ -31,7 +32,7 @@
                   Margin="0,10,0,10">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Puesto"
+                <DataGridTextColumn Header="{DynamicResource Ranking_Columna_Puesto}"
                                     Binding="{Binding Puesto}"
                                     Width="2*"
                                     FontFamily="{StaticResource SFMonoRegular}">
@@ -40,11 +41,11 @@
                     </DataGridTextColumn.HeaderStyle>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Header="Usuario"
+                <DataGridTextColumn Header="{DynamicResource Ranking_Columna_Usuario}"
                                     Binding="{Binding Usuario}"
                                     Width="4*"/>
 
-                <DataGridTextColumn Header="Puntaje"
+                <DataGridTextColumn Header="{DynamicResource Ranking_Columna_Puntaje}"
                                     Binding="{Binding Puntaje}"
                                     Width="2*"/>
             </DataGrid.Columns>
@@ -52,7 +53,7 @@
 
         <!-- Botón Regresar -->
         <Button Grid.Row="2"
-                Content="Regresar"
+                Content="{DynamicResource Ranking_Boton_Regresar}"
                 Click="btnClicRegresar"
                 Style="{StaticResource SecondaryButtonNoIconStyle}"
                 HorizontalAlignment="Left"

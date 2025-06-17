@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,11 @@ namespace AhorcadoCliente.Modelo
         public string DescripcionIngles { get; set; }
         public int IdCategoria { get; set; }
         public int IdDificultad { get; set; }
-        public override string ToString() => Nombre;
+        public override string ToString()
+        {
+            string idioma = CultureInfo.CurrentUICulture.Name;
+            return idioma.StartsWith("en") ? NombreIngles : Nombre;
+        }
     }
 }
 

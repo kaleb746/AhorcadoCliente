@@ -48,7 +48,11 @@ namespace AhorcadoCliente.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener las partidas disponibles: {ex.Message}");
+                string mensaje = string.Format(
+                    Application.Current.TryFindResource("Msg_Descripcion_ErrorCargarPartidas")?.ToString() ??
+                    "Error al obtener las partidas disponibles: {0}", ex.Message);
+
+                MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
             }
             finally
             {
@@ -70,7 +74,7 @@ namespace AhorcadoCliente.Vistas
 
             if (partidaSeleccionada == null)
             {
-                MessageBox.Show("Selecciona una partida para unirte.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageDialog.Show("Msg_Titulo_SinSeleccion", "Msg_Descripcion_SinSeleccion", MessageDialog.DialogType.WARNING, this);
                 return;
             }
 
@@ -93,18 +97,23 @@ namespace AhorcadoCliente.Vistas
 
                 if (exito)
                 {
-                    MessageBox.Show("Te uniste exitosamente a la partida.", "Unión exitosa", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageDialog.Show("Msg_Titulo_UnirseExitoso", "Msg_Descripcion_UnirseExitoso", MessageDialog.DialogType.INFO, this);
                 }
                 else
                 {
-                    MessageBox.Show("No fue posible unirse a la partida. Intenta con otra.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_UnirseFallido", "Msg_Descripcion_UnirseFallido", MessageDialog.DialogType.ERROR, this);
                     _client.Close();
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al unirse a la partida: {ex.Message}");
+                string mensaje = string.Format(
+                    Application.Current.TryFindResource("Msg_Descripcion_ErrorUnirse")?.ToString() ??
+                    "Error al unirse a la partida: {0}", ex.Message);
+
+                MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
+
                 if (_client?.State == CommunicationState.Faulted)
                     _client.Abort();
                 else
@@ -113,6 +122,5 @@ namespace AhorcadoCliente.Vistas
                 this.Close();
             }
         }
-
     }
 }

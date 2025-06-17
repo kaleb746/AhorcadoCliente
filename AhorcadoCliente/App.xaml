@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosScroller.xaml"/>
                 <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstilosDataGrid.xaml" />
                 <ResourceDictionary Source="/AhorcadoCliente;component/Recursos/Estilos/EstiloWrapPanel.xaml" />
+                <ResourceDictionary Source="Properties/RecursosCombinados.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

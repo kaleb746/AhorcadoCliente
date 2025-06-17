@@ -7,9 +7,6 @@ using System.Windows;
 
 namespace AhorcadoCliente.Vistas
 {
-    /// <summary>
-    /// Lógica de interacción para HistorialPartida.xaml
-    /// </summary>
     public partial class HistorialPartida : Window
     {
         public HistorialPartida()
@@ -24,7 +21,7 @@ namespace AhorcadoCliente.Vistas
             {
                 if (SesionActual.JugadorActual == null || SesionActual.ClienteWCF == null)
                 {
-                    MessageBox.Show("No se encontró la sesión del jugador.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_ErrorSesion", "Msg_Descripcion_ErrorSesion", MessageDialog.DialogType.ERROR, this);
                     this.Close();
                     return;
                 }
@@ -38,15 +35,21 @@ namespace AhorcadoCliente.Vistas
                 {
                     Fecha = h.Fecha,
                     Usuario = h.Usuario,
-                    Dificultad = h.Dificultad,
-                    Resultado = h.Resultado == "Ganó" ? "Ganaste" : "Perdiste"
+                    Dificultad = TraducirDificultad(h.Dificultad),
+                    Resultado = h.Resultado == "Ganó"
+                        ? Application.Current.TryFindResource("Historial_Resultado_Ganaste")?.ToString() ?? "Ganaste"
+                        : Application.Current.TryFindResource("Historial_Resultado_Perdiste")?.ToString() ?? "Perdiste"
                 }).ToList();
 
                 PartidasDataGrid.ItemsSource = historialLocal;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar el historial: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string mensaje = string.Format(
+                    Application.Current.TryFindResource("Msg_Descripcion_ErrorHistorial")?.ToString()
+                    ?? "Error al cargar el historial: {0}", ex.Message);
+
+                MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
             }
         }
 
@@ -54,5 +57,23 @@ namespace AhorcadoCliente.Vistas
         {
             this.Close();
         }
+        private string TraducirDificultad(string dificultadOriginal)
+        {
+            switch (dificultadOriginal.ToLower())
+            {
+                case "fácil":
+                case "facil":
+                    return Application.Current.TryFindResource("Dificultad_Facil")?.ToString() ?? dificultadOriginal;
+                case "intermedia":
+                case "media":
+                    return Application.Current.TryFindResource("Dificultad_Media")?.ToString() ?? dificultadOriginal;
+                case "difícil":
+                case "dificil":
+                    return Application.Current.TryFindResource("Dificultad_Dificil")?.ToString() ?? dificultadOriginal;
+                default:
+                    return dificultadOriginal;
+            }
+        }
+
     }
 }

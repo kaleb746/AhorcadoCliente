@@ -3,39 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AhorcadoCliente.Vistas"
         mc:Ignorable="d"
         Title="CrearPartida" Height="400" Width="500"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Border Background="#8de3fa"
-        CornerRadius="20"
-        BorderThickness="1"
-        Width="320"
-        Padding="30"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center" Height="338">
+                CornerRadius="20"
+                BorderThickness="1"
+                Width="320"
+                Padding="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" Height="338">
 
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="210">
+                <!-- Encabezado -->
                 <StackPanel Grid.Row="0" Margin="0,10,0,20" HorizontalAlignment="Center">
-                    <TextBlock Text="Crear partida" FontSize="24" FontWeight="Bold" Foreground="#2C3E50" TextAlignment="Center"/>
-                    <TextBlock Text="Llene todos los campos para continuar" FontSize="10" Foreground="Gray" TextAlignment="Center"/>
+                    <TextBlock Text="{DynamicResource CrearPartida_Titulo}" 
+                               FontSize="24" FontWeight="Bold" Foreground="#2C3E50" TextAlignment="Center"/>
+                    <TextBlock Text="{DynamicResource CrearPartida_Descripcion}" 
+                               FontSize="10" Foreground="Gray" TextAlignment="Center"/>
                 </StackPanel>
-                <ComboBox x:Name="cbDificultades" Tag="Dificultad" Style="{StaticResource ComboBoxStyle}" Margin="0,0,0,10"
+
+                <!-- Campos -->
+                <ComboBox x:Name="cbDificultades" 
+                          Tag="{DynamicResource CrearPartida_Dificultad}" 
+                          Style="{StaticResource ComboBoxStyle}" 
+                          Margin="0,0,0,10"
                           SelectionChanged="cbDificultades_SelectionChanged"/>
-                <ComboBox x:Name="cbCategorias" Tag="Categoría" Style="{StaticResource ComboBoxStyle}" Margin="0,0,0,10"
+
+                <ComboBox x:Name="cbCategorias" 
+                          Tag="{DynamicResource CrearPartida_Categoria}" 
+                          Style="{StaticResource ComboBoxStyle}" 
+                          Margin="0,0,0,10"
                           SelectionChanged="cbCategorias_SelectionChanged"/>
-                <ComboBox x:Name="cbPalabras" Tag="Palabra" Style="{StaticResource ComboBoxStyle}" Margin="0,0,0,10"
+
+                <ComboBox x:Name="cbPalabras" 
+                          Tag="{DynamicResource CrearPartida_Palabra}" 
+                          Style="{StaticResource ComboBoxStyle}" 
+                          Margin="0,0,0,10"
                           SelectionChanged="cbPalabras_SelectionChanged"/>
 
+                <!-- Botones -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
                     <Button x:Name="BtnCrearSala"
-                            Content="Regresar"
+                            Content="{DynamicResource CrearPartida_Boton_Regresar}"
                             Style="{StaticResource SecondaryButtonNoIconStyle}"
                             Width="100"
                             Click="btnClicRegresar"/>
-                    <Button Content="Crear sala"
+
+                    <Button Content="{DynamicResource CrearPartida_Boton_Crear}"
                             Style="{StaticResource PrimaryButtonNoIconStyle}"
                             Width="100"
                             Margin="10,0,0,0"

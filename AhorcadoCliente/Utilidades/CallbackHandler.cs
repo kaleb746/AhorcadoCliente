@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media;
 using AhorcadoCliente.ServiciosAhorcado;
 using AhorcadoCliente.Vistas;
+using AhorcadoCliente.Utilidades;
 
 public class CallbackHandler : IGestorPrincipalCallback
 {
@@ -13,7 +14,6 @@ public class CallbackHandler : IGestorPrincipalCallback
 
     public CallbackHandler(Window ventana)
     {
-        // Ya no se requiere la ventana directamente
     }
 
     public void SetDatosPartida(int idPartida, int idJugador, GestorPrincipalClient cliente)
@@ -27,7 +27,11 @@ public class CallbackHandler : IGestorPrincipalCallback
     {
         Application.Current.Dispatcher.Invoke(() =>
         {
-            MessageBox.Show($"Se ha unido el jugador: {usernameInvitado}", "Notificación");
+            string mensaje = string.Format(
+                Application.Current.TryFindResource("Msg_Descripcion_JugadorUnido")?.ToString()
+                ?? "Se ha unido el jugador: {0}", usernameInvitado);
+
+            MessageDialog.Show("Msg_Titulo_JugadorUnido", mensaje, MessageDialog.DialogType.INFO);
 
             var ventana = new JugarPartidaAnfitrion();
             ventana.Show();
@@ -39,6 +43,7 @@ public class CallbackHandler : IGestorPrincipalCallback
             }
         });
     }
+
     public void NotificarIntentoLetra(char letra, bool acierto, string estadoActualPalabra)
     {
         Application.Current.Dispatcher.Invoke(() =>
@@ -61,6 +66,7 @@ public class CallbackHandler : IGestorPrincipalCallback
             }
         });
     }
+
     public void NotificarFinPartida(bool gano, string mensaje)
     {
         Application.Current.Dispatcher.Invoke(() =>
@@ -68,7 +74,7 @@ public class CallbackHandler : IGestorPrincipalCallback
             var ventana = Application.Current.Windows.OfType<JugarPartidaAnfitrion>().FirstOrDefault();
             if (ventana != null)
             {
-                MessageBox.Show(mensaje, "Fin de la partida", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageDialog.Show("Msg_Titulo_FinPartida", mensaje, MessageDialog.DialogType.INFO);
 
                 var menu = new MenuPrincipal();
                 menu.Show();
@@ -77,6 +83,4 @@ public class CallbackHandler : IGestorPrincipalCallback
             }
         });
     }
-
-
 }

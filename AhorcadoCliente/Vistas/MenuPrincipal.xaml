@@ -7,65 +7,66 @@
         mc:Ignorable="d"
         Title="MenuPrincipal" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/AhorcadoCliente;component/Recursos/Iconos/fondo_menu.png" Stretch="Fill"/>
         </Grid.Background>
-        
+
         <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
-                Content="Configuración"
+                Content="{DynamicResource MenuPrincipal_Configuracion}"
                 Margin="30"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="btnClicConfiguracion"/>
 
         <Button Style="{StaticResource SecondaryButtonNoIconStyle}"
-                Content="Ver Ranking"
+                Content="{DynamicResource MenuPrincipal_VerRanking}"
                 Margin="30"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Click="btnClicMostrarRanking"/>
 
         <Border Background="#8de3fa" CornerRadius="20" Padding="30"
-        Width="390" Height="270" 
-        HorizontalAlignment="Center" VerticalAlignment="Center">
+                Width="390" Height="270" 
+                HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Effect>
                 <DropShadowEffect Color="Black"
-                          Opacity="0.4"
-                          ShadowDepth="8"
-                          BlurRadius="15"
-                          Direction="270"/>
+                                  Opacity="0.4"
+                                  ShadowDepth="8"
+                                  BlurRadius="15"
+                                  Direction="270"/>
             </Border.Effect>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                <Button Content="Crear partida"
-                Margin="0,0,0,25"
-                Height="50"
-                FontSize="15"
-                Foreground="White"
-                BorderThickness="0"
-                Cursor="Hand"
-                Click="btnClicCrearPartida"
-                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+                <Button Content="{DynamicResource MenuPrincipal_CrearPartida}"
+                        Margin="0,0,0,25"
+                        Height="50"
+                        FontSize="15"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnClicCrearPartida"
+                        Style="{StaticResource SecondaryButtonNoIconStyle}"/>
 
-                <Button Content="Buscar partida"
-                Margin="0,0,0,25"
-                Height="50"
-                FontSize="15"
-                Foreground="White"
-                BorderThickness="0"
-                Cursor="Hand"
-                Click="btnClicBuscarPartida"
-                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+                <Button Content="{DynamicResource MenuPrincipal_BuscarPartida}"
+                        Margin="0,0,0,25"
+                        Height="50"
+                        FontSize="15"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnClicBuscarPartida"
+                        Style="{StaticResource SecondaryButtonNoIconStyle}"/>
 
-                <Button Content="Historial de partidas"
-                Height="50"
-                FontSize="15"
-                Foreground="White"
-                BorderThickness="0"
-                Cursor="Hand"
-                Click="btnClicHistorialPartidas"
-                Style="{StaticResource SecondaryButtonNoIconStyle}"/>
+                <Button Content="{DynamicResource MenuPrincipal_Historial}"
+                        Height="50"
+                        FontSize="15"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnClicHistorialPartidas"
+                        Style="{StaticResource SecondaryButtonNoIconStyle}"/>
             </StackPanel>
         </Border>
     </Grid>

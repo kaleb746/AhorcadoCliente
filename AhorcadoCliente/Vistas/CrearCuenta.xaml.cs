@@ -38,10 +38,9 @@ namespace AhorcadoCliente.Vistas
             jugadorExistente = jugador;
             esEdicion = true;
             CargarDatosJugador(jugador);
-            TxtTituloPrincipal.Text = "Editar Perfil";
-            TxtSubtitulo.Text = "Actualiza tu información personal";
-            BtnRegistrar.Content = "Guardar cambios";
-            CbIdioma.Visibility = Visibility.Visible;
+            TxtTituloPrincipal.Text = Application.Current.TryFindResource("CrearCuenta_Titulo_EditarPerfil")?.ToString() ?? "Editar Perfil";
+            TxtSubtitulo.Text = Application.Current.TryFindResource("CrearCuenta_Descripcion_EditarPerfil")?.ToString() ?? "Actualiza tu información personal";
+            BtnRegistrar.Content = Application.Current.TryFindResource("CrearCuenta_Btn_GuardarCambios")?.ToString() ?? "Guardar cambios";
             BtnEliminar.Visibility = Visibility.Visible;
         }
         private void CargarDatosJugador(Jugador jugador)
@@ -118,8 +117,7 @@ namespace AhorcadoCliente.Vistas
 
             if (!ValidacionesEntrada.EsFormatoCorreoValido(correo))
             {
-                MessageBox.Show("El formato del correo electrónico no es válido. Por favor, revisa que sea similar a ejemplo@dominio.com.",
-                                "Correo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageDialog.Show("Msg_Titulo_CorreoInvalido", "Msg_Descripcion_CorreoInvalido", MessageDialog.DialogType.WARNING, this);
                 return;
             }
             try
@@ -173,28 +171,30 @@ namespace AhorcadoCliente.Vistas
                 if (resultado == 1)
                 {
                     SesionActual.JugadorActual = jugador;
-                    MessageBox.Show(esEdicion ? "Perfil actualizado correctamente." : "¡Registro exitoso!", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageDialog.Show("Msg_Titulo_RegistroExitoso",esEdicion ? "Msg_Descripcion_PerfilActualizado" : "Msg_Descripcion_RegistroExitoso",MessageDialog.DialogType.INFO,this);
                     this.Close();
                 }
                 else if (resultado == -1)
                 {
-                    MessageBox.Show("Ya existe un usuario con ese correo o nombre de usuario.", "Duplicado", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageDialog.Show("Msg_Titulo_Duplicado", "Msg_Descripcion_Duplicado", MessageDialog.DialogType.WARNING, this);
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrió un error al procesar la solicitud.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_ErrorRegistro", "Msg_Descripcion_ErrorRegistro", MessageDialog.DialogType.ERROR, this);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string mensaje = string.Format(
+                Application.Current.TryFindResource("Msg_Descripcion_ErrorInesperado")?.ToString() ?? "Error inesperado: {0}", ex.Message);
+                MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
             }
         }
         private async void btnClicEliminar(object sender, RoutedEventArgs e)
         {
             var confirmar = MessageBox.Show(
-                "¿Seguro que deseas eliminar tu perfil? Esta acción es permanente.",
-                "Confirmar eliminación",
+                Application.Current.TryFindResource("Msg_Descripcion_ConfirmarEliminacion")?.ToString() ?? "¿Seguro que deseas eliminar tu perfil? Esta acción es permanente.",
+                Application.Current.TryFindResource("Msg_Titulo_ConfirmarEliminacion")?.ToString() ?? "Confirmar eliminación",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Warning);
 
@@ -208,13 +208,12 @@ namespace AhorcadoCliente.Vistas
 
                 if (resultado == 1)
                 {
-                    MessageBox.Show("Perfil eliminado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageDialog.Show("Msg_Titulo_PerfilEliminado", "Msg_Descripcion_PerfilEliminado", MessageDialog.DialogType.INFO, this);
                     SesionActual.JugadorActual = null;
 
                     var ventana = new IniciarSesion();
                     ventana.Show();
 
-                    // Cierra todas las ventanas excepto la de inicio de sesión
                     foreach (Window win in Application.Current.Windows)
                     {
                         if (win != ventana)
@@ -224,16 +223,17 @@ namespace AhorcadoCliente.Vistas
                 }
                 else if (resultado == 0)
                 {
-                    MessageBox.Show("No se encontró el jugador en la base de datos.", "No encontrado", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageDialog.Show("Msg_Titulo_NoEncontrado", "Msg_Descripcion_NoEncontrado", MessageDialog.DialogType.WARNING, this);
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrió un error al intentar eliminar el perfil.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_ErrorEliminar", "Msg_Descripcion_ErrorEliminar", MessageDialog.DialogType.ERROR, this);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string mensaje = string.Format(Application.Current.TryFindResource("Msg_Descripcion_ErrorInesperado")?.ToString() ?? "Error inesperado: {0}", ex.Message);
+                MessageDialog.Show("Msg_Titulo_Error", mensaje, MessageDialog.DialogType.ERROR, this);
             }
         }
     }

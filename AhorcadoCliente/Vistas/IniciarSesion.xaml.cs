@@ -34,7 +34,7 @@ namespace AhorcadoCliente.Vistas
 
                 if (jugador == null)
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageDialog.Show("Msg_Titulo_ErrorInicioSesion", "Msg_Error_InicioSesion", MessageDialog.DialogType.ERROR, this);
                     return;
                 }
                 SesionActual.JugadorActual = new Modelo.Jugador
@@ -52,7 +52,7 @@ namespace AhorcadoCliente.Vistas
                 };
                 SesionActual.ClienteWCF = new GestorPrincipalClient(context);
 
-                MessageBox.Show($"¡Bienvenido, {jugador.Nombre}!", "Inicio exitoso", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageDialog.Show("Msg_Titulo_Bienvenida", "Msg_Bienvenida", MessageDialog.DialogType.INFO, this, jugador.Nombre);
 
                 var ventanaPrincipal = new MenuPrincipal(); 
                 ventanaPrincipal.Show();
@@ -60,7 +60,7 @@ namespace AhorcadoCliente.Vistas
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show($"Error de comunicación con el servidor: {ex.Message}", "Error de conexión", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageDialog.Show("Msg_Titulo_ErrorConexion", "Msg_Error_ConexionServidor", MessageDialog.DialogType.ERROR, this, ex.Message);
             }
             finally
             {
@@ -102,6 +102,16 @@ namespace AhorcadoCliente.Vistas
             var ventana = new CrearCuenta();
             ventana.Owner = this;
             ventana.ShowDialog();
+        }
+
+        private void cbIdiomas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbIdiomas.SelectedItem is ComboBoxItem itemSeleccionado)
+            {
+                string codigoCultura = itemSeleccionado.Tag.ToString();
+                var app = (App)Application.Current;
+                app.CambiarIdioma(codigoCultura);
+            }
         }
     }
 }
