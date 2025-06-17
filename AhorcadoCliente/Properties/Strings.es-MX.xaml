@@ -1,0 +1,127 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Dificultad_Facil">Fácil</sys:String>
+    <sys:String x:Key="Dificultad_Media">Intermedia</sys:String>
+    <sys:String x:Key="Dificultad_Dificil">Difícil</sys:String>
+
+    <sys:String x:Key="InicioSesion_Titulo">Bienvenido</sys:String>
+    <sys:String x:Key="InicioSesion_Descripcion">Inicia sesión para continuar</sys:String>
+    <sys:String x:Key="Glb_NombreUsuario">Usuario</sys:String>
+    <sys:String x:Key="Glb_Contrasenia">Contraseña</sys:String>
+    <sys:String x:Key="Glb_Idioma">Idioma</sys:String>
+    <sys:String x:Key="Glb_Espanol">Español</sys:String>
+    <sys:String x:Key="Glb_Ingles">Inglés</sys:String>
+    <sys:String x:Key="InicioSesion_Boton_Iniciar">Iniciar sesión</sys:String>
+    <sys:String x:Key="InicioSesion_Boton_Registrar">¿No tienes cuenta? Regístrate</sys:String>
+    <sys:String x:Key="Msg_Error_InicioSesion">Usuario o contraseña incorrectos</sys:String>
+    <sys:String x:Key="Msg_Titulo_ErrorInicioSesion">Error de inicio de sesión</sys:String>
+    <sys:String x:Key="Msg_Bienvenida">¡Bienvenido, {0}!</sys:String>
+    <sys:String x:Key="Msg_Titulo_Bienvenida">Inicio exitoso</sys:String>
+    <sys:String x:Key="Msg_Error_ConexionServidor">Error de comunicación con el servidor: {0}</sys:String>
+    <sys:String x:Key="Msg_Titulo_ErrorConexion">Error de conexión</sys:String>
+
+    <sys:String x:Key="MenuPrincipal_Configuracion">Configuración</sys:String>
+    <sys:String x:Key="MenuPrincipal_VerRanking">Ver Ranking</sys:String>
+    <sys:String x:Key="MenuPrincipal_CrearPartida">Crear partida</sys:String>
+    <sys:String x:Key="MenuPrincipal_BuscarPartida">Buscar partida</sys:String>
+    <sys:String x:Key="MenuPrincipal_Historial">Historial de partidas</sys:String>
+    <sys:String x:Key="Msg_Titulo_ErrorSesion">Error</sys:String>
+    <sys:String x:Key="Msg_Error_SesionNoEncontrada">No se encontró la sesión del jugador.</sys:String>
+
+    <sys:String x:Key="CrearCuenta_Titulo">Registrar Usuario</sys:String>
+    <sys:String x:Key="CrearCuenta_Subtitulo">Completa los siguientes campos para crear tu cuenta</sys:String>
+    <sys:String x:Key="CrearCuenta_Nombres">Nombres</sys:String>
+    <sys:String x:Key="CrearCuenta_ApellidoPaterno">Apellido Paterno</sys:String>
+    <sys:String x:Key="CrearCuenta_ApellidoMaterno">Apellido Materno</sys:String>
+    <sys:String x:Key="CrearCuenta_FechaNacimiento">Selecciona tu fecha de nacimiento</sys:String>
+    <sys:String x:Key="CrearCuenta_Telefono">Teléfono</sys:String>
+    <sys:String x:Key="CrearCuenta_Usuario">Nombre de usuario</sys:String>
+    <sys:String x:Key="CrearCuenta_Correo">Correo electrónico</sys:String>
+    <sys:String x:Key="CrearCuenta_Contrasenia">Contraseña</sys:String>
+    <sys:String x:Key="CrearCuenta_EliminarPerfil">Eliminar perfil</sys:String>
+    <sys:String x:Key="CrearCuenta_Regresar">Regresar</sys:String>
+    <sys:String x:Key="CrearCuenta_Registrarse">Registrarse</sys:String>
+    <sys:String x:Key="CrearCuenta_Titulo_EditarPerfil">Editar Perfil</sys:String>
+    <sys:String x:Key="CrearCuenta_Descripcion_EditarPerfil">Actualiza tu información personal</sys:String>
+    <sys:String x:Key="CrearCuenta_Btn_GuardarCambios">Guardar cambios</sys:String>
+    <sys:String x:Key="Msg_Titulo_CorreoInvalido">Correo inválido</sys:String>
+    <sys:String x:Key="Msg_Descripcion_CorreoInvalido">El formato del correo electrónico no es válido. Por favor, revisa que sea similar a ejemplo@dominio.com.</sys:String>
+    <sys:String x:Key="Msg_Titulo_RegistroExitoso">Éxito</sys:String>
+    <sys:String x:Key="Msg_Descripcion_RegistroExitoso">¡Registro exitoso!</sys:String>
+    <sys:String x:Key="Msg_Descripcion_PerfilActualizado">Perfil actualizado correctamente.</sys:String>
+    <sys:String x:Key="Msg_Titulo_Duplicado">Duplicado</sys:String>
+    <sys:String x:Key="Msg_Descripcion_Duplicado">Ya existe un usuario con ese correo o nombre de usuario.</sys:String>
+    <sys:String x:Key="Msg_Titulo_ErrorRegistro">Error</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorRegistro">Ocurrió un error al procesar la solicitud.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorInesperado">Error inesperado: {0}</sys:String>
+    <sys:String x:Key="Msg_Titulo_ConfirmarEliminacion">Confirmar eliminación</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ConfirmarEliminacion">¿Seguro que deseas eliminar tu perfil? Esta acción es permanente.</sys:String>
+    <sys:String x:Key="Msg_Titulo_PerfilEliminado">Éxito</sys:String>
+    <sys:String x:Key="Msg_Descripcion_PerfilEliminado">Perfil eliminado correctamente.</sys:String>
+    <sys:String x:Key="Msg_Titulo_NoEncontrado">No encontrado</sys:String>
+    <sys:String x:Key="Msg_Descripcion_NoEncontrado">No se encontró el jugador en la base de datos.</sys:String>
+    <sys:String x:Key="Msg_Titulo_ErrorEliminar">Error</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorEliminar">Ocurrió un error al intentar eliminar el perfil.</sys:String>
+
+    <sys:String x:Key="Ranking_Titulo">Ranking Jugadores</sys:String>
+    <sys:String x:Key="Ranking_Columna_Puesto">Puesto</sys:String>
+    <sys:String x:Key="Ranking_Columna_Usuario">Usuario</sys:String>
+    <sys:String x:Key="Ranking_Columna_Puntaje">Puntaje</sys:String>
+    <sys:String x:Key="Ranking_Boton_Regresar">Regresar</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorCargarRanking">Error al cargar el ranking: {0}</sys:String>
+
+    <sys:String x:Key="Historial_Titulo">Historial de Partidas</sys:String>
+    <sys:String x:Key="Historial_Columna_Fecha">Fecha</sys:String>
+    <sys:String x:Key="Historial_Columna_Rival">Rival</sys:String>
+    <sys:String x:Key="Historial_Columna_Dificultad">Dificultad</sys:String>
+    <sys:String x:Key="Historial_Columna_Resultado">Resultado</sys:String>
+    <sys:String x:Key="Historial_Boton_Regresar">Regresar</sys:String>
+
+    <sys:String x:Key="Msg_Descripcion_ErrorSesion">No se encontró la sesión del jugador.</sys:String>
+    <sys:String x:Key="Msg_Titulo_Error">Error</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorHistorial">Error al cargar el historial: {0}</sys:String>
+    <sys:String x:Key="Historial_Resultado_Ganaste">Ganaste</sys:String>
+    <sys:String x:Key="Historial_Resultado_Perdiste">Perdiste</sys:String>
+
+    <sys:String x:Key="CrearPartida_Titulo">Crear partida</sys:String>
+    <sys:String x:Key="CrearPartida_Descripcion">Llene todos los campos para continuar</sys:String>
+    <sys:String x:Key="CrearPartida_Dificultad">Dificultad</sys:String>
+    <sys:String x:Key="CrearPartida_Categoria">Categoría</sys:String>
+    <sys:String x:Key="CrearPartida_Palabra">Palabra</sys:String>
+    <sys:String x:Key="CrearPartida_Boton_Regresar">Regresar</sys:String>
+    <sys:String x:Key="CrearPartida_Boton_Crear">Crear sala</sys:String>
+
+    <sys:String x:Key="Msg_Descripcion_ErrorCategoriasDificultades">Error al cargar categorías o dificultades.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorPalabras">Error al cargar las palabras.</sys:String>
+    <sys:String x:Key="Msg_Titulo_CampoObligatorio">Campo obligatorio</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SeleccionarPalabra">Seleccione una palabra para crear la partida.</sys:String>
+    <sys:String x:Key="Msg_Titulo_CreacionPartida">Partida creada</sys:String>
+    <sys:String x:Key="Msg_Descripcion_CreacionPartida">Partida creada exitosamente. Esperando a que otro jugador se una...</sys:String>
+    <sys:String x:Key="Msg_Titulo_EstadoNoExiste">Estado no encontrado</sys:String>
+    <sys:String x:Key="Msg_Descripcion_EstadoNoExiste">El estado 'En espera' no existe en el sistema.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorCrearPartida">Ocurrió un error al crear la partida.</sys:String>
+
+    <sys:String x:Key="UnirsePartida_Titulo">Partidas Disponibles</sys:String>
+    <sys:String x:Key="UnirsePartida_Columna_Fecha">Fecha</sys:String>
+    <sys:String x:Key="UnirsePartida_Columna_Usuario">Usuario</sys:String>
+    <sys:String x:Key="UnirsePartida_Columna_Dificultad">Dificultad</sys:String>
+    <sys:String x:Key="UnirsePartida_Columna_Categoria">Categoría</sys:String>
+    <sys:String x:Key="UnirsePartida_Boton_Regresar">Regresar</sys:String>
+    <sys:String x:Key="UnirsePartida_Boton_Unirse">Unirse</sys:String>
+    <sys:String x:Key="Msg_Titulo_SinSeleccion">Advertencia</sys:String>
+    <sys:String x:Key="Msg_Titulo_UnirseExitoso">Unión exitosa</sys:String>
+    <sys:String x:Key="Msg_Titulo_UnirseFallido">No se pudo unir</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SinSeleccion">Selecciona una partida para unirte.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_UnirseExitoso">Te uniste exitosamente a la partida.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_UnirseFallido">No fue posible unirse a la partida. Intenta con otra.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorUnirse">Error al unirse a la partida: {0}</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorCargarPartidas">Error al obtener las partidas disponibles: {0}</sys:String>
+
+    <sys:String x:Key="Msg_Titulo_JugadorUnido">Jugador unido</sys:String>
+    <sys:String x:Key="Msg_Descripcion_JugadorUnido">Se ha unido el jugador: {0}</sys:String>
+    <sys:String x:Key="Msg_Titulo_FinPartida">Fin de la partida</sys:String>
+
+
+</ResourceDictionary>

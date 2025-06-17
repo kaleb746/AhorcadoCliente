@@ -36,7 +36,7 @@ namespace AhorcadoCliente.Vistas
             }
             else
             {
-                MessageBox.Show("No se encontró la sesión del jugador.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageDialog.Show("Msg_Titulo_ErrorSesion", "Msg_Error_SesionNoEncontrada", MessageDialog.DialogType.ERROR, this);
             }
         }
         private void btnClicMostrarRanking(object sender, RoutedEventArgs e)

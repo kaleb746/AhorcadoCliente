@@ -73,6 +73,7 @@
     <Compile Include="Utilidades\CallbackHandler.cs" />
     <Compile Include="Utilidades\CallbackInvitadoHandler.cs" />
     <Compile Include="Utilidades\Constantes.cs" />
+    <Compile Include="Utilidades\MessageDialog.cs" />
     <Compile Include="Utilidades\SesionActual.cs" />
     <Compile Include="Utilidades\ValidacionesEntrada.cs" />
     <Compile Include="Vistas\CrearCuenta.xaml.cs">
@@ -119,7 +120,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Properties\String.es-MX.xaml">
+    <Page Include="Properties\Strings.en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\Strings.es-MX.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,5 +1,6 @@
 ﻿using AhorcadoCliente.Vistas;
 using AhorcadoCliente.ServiciosAhorcado;
+using AhorcadoCliente.Utilidades;
 using System.Windows;
 using System.Linq;
 using System.Windows.Media;
@@ -59,6 +60,7 @@ public class CallbackInvitadoHandler : IGestorPrincipalCallback
             }
         });
     }
+
     public void NotificarFinPartida(bool gano, string mensaje)
     {
         Application.Current.Dispatcher.Invoke(() =>
@@ -66,10 +68,8 @@ public class CallbackInvitadoHandler : IGestorPrincipalCallback
             var ventanaJuego = Application.Current.Windows.OfType<JugarPartida>().FirstOrDefault();
             if (ventanaJuego != null)
             {
-                ventanaJuego.MostrarFinPartida(gano, mensaje);
+                ventanaJuego.MostrarFinPartida(gano, mensaje); 
             }
         });
     }
-
 }
-

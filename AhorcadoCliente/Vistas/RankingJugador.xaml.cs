@@ -41,7 +41,11 @@ namespace AhorcadoCliente.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar el ranking: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string descripcion = string.Format(
+                    Application.Current.TryFindResource("Msg_Descripcion_ErrorCargarRanking")?.ToString()
+                    ?? "Error al cargar el ranking: {0}", ex.Message);
+
+                MessageDialog.Show("Msg_Titulo_Error", descripcion, MessageDialog.DialogType.ERROR, this);
             }
             finally
             {
