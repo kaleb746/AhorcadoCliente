@@ -143,8 +143,8 @@ namespace AhorcadoCliente.Vistas
 
                 try
                 {
-                    int idPartida = await Task.Run(() => client.CrearPartida(idJugador, idPalabra, SesionActual.IdiomaActual));
-
+                    string idioma = string.IsNullOrEmpty(SesionActual.IdiomaActual) ? "es" : SesionActual.IdiomaActual;
+                    int idPartida = await Task.Run(() => client.CrearPartida(idJugador, idPalabra, idioma));
 
                     if (idPartida > 0)
                     {
