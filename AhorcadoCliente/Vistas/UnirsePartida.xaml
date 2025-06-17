@@ -30,17 +30,16 @@
                   ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle0}"
                   Grid.Row="1"
                   Margin="0,10,0,10">
-
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{DynamicResource UnirsePartida_Columna_Fecha}"
                                     Binding="{Binding Fecha}"
-                                    Width="2*"/>
+                                    Width="1.9*"/>
                 <DataGridTextColumn Header="{DynamicResource UnirsePartida_Columna_Usuario}"
                                     Binding="{Binding Usuario}"
-                                    Width="*"/>
+                                    Width="1.1*"/>
                 <DataGridTextColumn Header="{DynamicResource UnirsePartida_Columna_Dificultad}"
                                     Binding="{Binding Dificultad}"
-                                    Width="*"/>
+                                    Width="1.2*"/>
                 <DataGridTextColumn Header="{DynamicResource UnirsePartida_Columna_Categoria}"
                                     Binding="{Binding Categoria}"
                                     Width="*"/>

@@ -51,6 +51,10 @@ namespace AhorcadoCliente.Vistas
                     Puntaje = jugador.Puntaje
                 };
                 SesionActual.ClienteWCF = new GestorPrincipalClient(context);
+                if (cbIdiomas.SelectedItem is ComboBoxItem itemSeleccionado && itemSeleccionado.Tag is string idiomaSeleccionado)
+                {
+                    SesionActual.IdiomaActual = idiomaSeleccionado;
+                }
 
                 MessageDialog.Show("Msg_Titulo_Bienvenida", "Msg_Bienvenida", MessageDialog.DialogType.INFO, this, jugador.Nombre);
 
@@ -108,10 +112,15 @@ namespace AhorcadoCliente.Vistas
         {
             if (cbIdiomas.SelectedItem is ComboBoxItem itemSeleccionado)
             {
-                string codigoCultura = itemSeleccionado.Tag.ToString();
+                string codigoCultura = itemSeleccionado.Tag.ToString(); 
+
                 var app = (App)Application.Current;
                 app.CambiarIdioma(codigoCultura);
+
+                string idiomaBase = codigoCultura.Split('-')[0];
+                SesionActual.IdiomaActual = idiomaBase;
             }
         }
+
     }
 }

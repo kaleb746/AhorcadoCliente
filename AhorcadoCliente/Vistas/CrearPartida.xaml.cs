@@ -143,7 +143,8 @@ namespace AhorcadoCliente.Vistas
 
                 try
                 {
-                    int idPartida = await Task.Run(() => client.CrearPartida(idJugador, idPalabra));
+                    int idPartida = await Task.Run(() => client.CrearPartida(idJugador, idPalabra, SesionActual.IdiomaActual));
+
 
                     if (idPartida > 0)
                     {

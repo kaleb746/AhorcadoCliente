@@ -36,13 +36,14 @@ namespace AhorcadoCliente.Vistas
                 {
                     IdPartida = p.IdPartida,
                     NombrePalabra = p.NombrePalabra,
-                    Categoria = p.NombreCategoria,
-                    Dificultad = p.NombreDificultad,
+                    Categoria = p.Idioma.StartsWith("en") ? TraducirCategoria(p.NombreCategoria) : p.NombreCategoria,
+                    Dificultad = p.Idioma.StartsWith("en") ? TraducirDificultad(p.NombreDificultad) : p.NombreDificultad,
                     Fecha = p.FechaCreacion,
                     Idioma = p.Idioma,
                     IdJugadorAnfitrion = p.IdJugadorAnfitrion,
                     UsuarioAnfitrion = p.UsuarioAnfitrion
                 }).ToList();
+
 
                 PartidasDataGrid.ItemsSource = partidas;
             }
@@ -122,5 +123,34 @@ namespace AhorcadoCliente.Vistas
                 this.Close();
             }
         }
+        private string TraducirDificultad(string dificultad)
+        {
+            switch (dificultad)
+            {
+                case "Fácil": return "Easy";
+                case "Intermedia": return "Intermediate";
+                case "Difícil": return "Hard";
+                default: return dificultad;
+            }
+        }
+        private string TraducirCategoria(string categoria)
+        {
+            switch (categoria)
+            {
+                case "Animales": return "Animals";
+                case "Frutas": return "Fruits";
+                case "Paises": return "Countries";
+                case "Colores": return "Colors";
+                case "Profesiones": return "Professions";
+                case "Partes del cuerpo": return "Body Parts";
+                case "Deportes": return "Sports";
+                case "Instrumentos": return "Instruments";
+                case "Transporte": return "Transport";
+                case "Ropa": return "Clothes";
+                default: return categoria;
+            }
+        }
+
+
     }
 }
