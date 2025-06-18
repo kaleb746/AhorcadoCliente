@@ -6,6 +6,7 @@ using System.Windows.Media;
 using AhorcadoCliente.ServiciosAhorcado;
 using System.Windows.Media.Imaging;
 using System.Linq;
+using AhorcadoCliente.Utilidades;
 
 namespace AhorcadoCliente.Vistas
 {
@@ -157,5 +158,31 @@ namespace AhorcadoCliente.Vistas
             this.Close();
         }
 
+        private void btnClicPista(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string pista = _cliente.ObtenerDescripcionPalabra(_idPartida);
+
+                if (string.IsNullOrWhiteSpace(pista))
+                {
+                    MessageDialog.Show("Msg_Titulo_Pista", "Msg_Descripcion_SinPista", MessageDialog.DialogType.INFO, this);
+                }
+                else
+                {
+                    string titulo = Application.Current.TryFindResource("Msg_Titulo_Pista")?.ToString() ?? "Pista";
+                    MessageBox.Show(this, pista, titulo, MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorInesperado", MessageDialog.DialogType.ERROR, this, ex.Message);
+            }
+        }
+
+        private void btnClicAbandonar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

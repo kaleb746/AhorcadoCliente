@@ -42,7 +42,7 @@
                                     Width="1.2*"/>
                 <DataGridTextColumn Header="{DynamicResource Historial_Columna_Resultado}"
                                     Binding="{Binding Resultado}"
-                                    Width="0.9*"/>
+                                    Width="1.1*"/>
             </DataGrid.Columns>
         </DataGrid>
 

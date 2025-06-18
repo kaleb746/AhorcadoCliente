@@ -120,6 +120,12 @@
   <wsdl:message name="IGestorPrincipal_ObtenerHistorialDeJugador_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerHistorialDeJugadorResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerDescripcionPalabra_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDescripcionPalabra" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerDescripcionPalabra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDescripcionPalabraResponse" />
+  </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
   </wsdl:message>
@@ -191,6 +197,10 @@
     <wsdl:operation name="ObtenerHistorialDeJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador" message="tns:IGestorPrincipal_ObtenerHistorialDeJugador_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugadorResponse" message="tns:IGestorPrincipal_ObtenerHistorialDeJugador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDescripcionPalabra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra" message="tns:IGestorPrincipal_ObtenerDescripcionPalabra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabraResponse" message="tns:IGestorPrincipal_ObtenerDescripcionPalabra_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
@@ -328,6 +338,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerHistorialDeJugador">
       <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDescripcionPalabra">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

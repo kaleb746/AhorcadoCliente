@@ -126,5 +126,8 @@
     <sys:String x:Key="Msg_Descripcion_JugadorUnido">Se ha unido el jugador: {0}</sys:String>
     <sys:String x:Key="Msg_Titulo_FinPartida">Fin de la partida</sys:String>
 
-
+    <sys:String x:Key="JugarPartida_Abandonar">Abandonar</sys:String>
+    <sys:String x:Key="JugarPartida_Pista">Pista</sys:String>
+    <sys:String x:Key="Msg_Titulo_Pista">Pista</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SinPista">No hay pista disponible para esta palabra.</sys:String>
 </ResourceDictionary>

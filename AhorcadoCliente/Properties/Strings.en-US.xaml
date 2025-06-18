@@ -6,22 +6,16 @@
     <sys:String x:Key="Dificultad_Media">Intermediate</sys:String>
     <sys:String x:Key="Dificultad_Dificil">Hard</sys:String>
 
-    <!-- Sign-in window header -->
     <sys:String x:Key="InicioSesion_Titulo">Welcome</sys:String>
     <sys:String x:Key="InicioSesion_Descripcion">Sign in to continue</sys:String>
 
-    <!-- Labels and control tags -->
     <sys:String x:Key="Glb_NombreUsuario">Username</sys:String>
     <sys:String x:Key="Glb_Contrasenia">Password</sys:String>
     <sys:String x:Key="Glb_Idioma">Language</sys:String>
     <sys:String x:Key="Glb_Espanol">Spanish</sys:String>
     <sys:String x:Key="Glb_Ingles">English</sys:String>
-
-    <!-- Buttons -->
     <sys:String x:Key="InicioSesion_Boton_Iniciar">Sign in</sys:String>
     <sys:String x:Key="InicioSesion_Boton_Registrar">Don't have an account? Sign up</sys:String>
-
-    <!-- Messages for login -->
     <sys:String x:Key="Msg_Error_InicioSesion">Incorrect username or password</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorInicioSesion">Login error</sys:String>
     <sys:String x:Key="Msg_Bienvenida">Welcome, {0}!</sys:String>
@@ -132,5 +126,8 @@
     <sys:String x:Key="Msg_Descripcion_JugadorUnido">Player {0} has joined the game</sys:String>
     <sys:String x:Key="Msg_Titulo_FinPartida">Game Over</sys:String>
 
-
+    <sys:String x:Key="JugarPartida_Abandonar">Leave</sys:String>
+    <sys:String x:Key="JugarPartida_Pista">Clue</sys:String>
+    <sys:String x:Key="Msg_Titulo_Pista">Clue</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SinPista">No clue available for this word.</sys:String>
 </ResourceDictionary>
