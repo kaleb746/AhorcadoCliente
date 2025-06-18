@@ -42,7 +42,7 @@
                                     Width="1.2*"/>
                 <DataGridTextColumn Header="{DynamicResource UnirsePartida_Columna_Categoria}"
                                     Binding="{Binding Categoria}"
-                                    Width="*"/>
+                                    Width="1.1*"/>
             </DataGrid.Columns>
         </DataGrid>
 

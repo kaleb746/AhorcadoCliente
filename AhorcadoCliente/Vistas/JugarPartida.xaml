@@ -12,6 +12,19 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
+            <StackPanel Orientation="Vertical"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,0,0,0"
+                Panel.ZIndex="1">
+                <Button Content="{DynamicResource JugarPartida_Pista}"
+                        Style="{StaticResource SecondaryButtonNoIconStyle}" Margin="5"
+                        Click="btnClicPista"/>
+                <Button Content="{DynamicResource JugarPartida_Abandonar}" Width="100"
+                        Style="{StaticResource SecondaryButtonNoIconStyle}" Margin="5"
+                        Click="btnClicAbandonar"/>
+            </StackPanel>
 
             <!-- Zona superior: Progreso de palabra + imagen del ahorcado -->
             <Grid Grid.Row="0">

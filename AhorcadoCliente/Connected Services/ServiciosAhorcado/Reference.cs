@@ -837,6 +837,12 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugador", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerHistorialDeJugadorResponse")]
         System.Threading.Tasks.Task<AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[]> ObtenerHistorialDeJugadorAsync(int idJugador);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabraResponse")]
+        string ObtenerDescripcionPalabra(int idPartida);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabraResponse")]
+        System.Threading.Tasks.Task<string> ObtenerDescripcionPalabraAsync(int idPartida);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestorPrincipal/Ping", ReplyAction="http://tempuri.org/IGestorPrincipal/PingResponse")]
         bool Ping();
         
@@ -995,6 +1001,14 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         
         public System.Threading.Tasks.Task<AhorcadoCliente.ServiciosAhorcado.HistorialPartidaDTO[]> ObtenerHistorialDeJugadorAsync(int idJugador) {
             return base.Channel.ObtenerHistorialDeJugadorAsync(idJugador);
+        }
+        
+        public string ObtenerDescripcionPalabra(int idPartida) {
+            return base.Channel.ObtenerDescripcionPalabra(idPartida);
+        }
+        
+        public System.Threading.Tasks.Task<string> ObtenerDescripcionPalabraAsync(int idPartida) {
+            return base.Channel.ObtenerDescripcionPalabraAsync(idPartida);
         }
         
         public bool Ping() {
