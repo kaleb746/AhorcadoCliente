@@ -126,6 +126,12 @@
   <wsdl:message name="IGestorPrincipal_ObtenerDescripcionPalabra_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDescripcionPalabraResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_AbandonarPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbandonarPartida" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_AbandonarPartida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbandonarPartidaResponse" />
+  </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
   </wsdl:message>
@@ -201,6 +207,10 @@
     <wsdl:operation name="ObtenerDescripcionPalabra">
       <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra" message="tns:IGestorPrincipal_ObtenerDescripcionPalabra_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabraResponse" message="tns:IGestorPrincipal_ObtenerDescripcionPalabra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbandonarPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/AbandonarPartida" message="tns:IGestorPrincipal_AbandonarPartida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/AbandonarPartidaResponse" message="tns:IGestorPrincipal_AbandonarPartida_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
@@ -347,6 +357,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerDescripcionPalabra">
       <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerDescripcionPalabra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbandonarPartida">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/AbandonarPartida" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

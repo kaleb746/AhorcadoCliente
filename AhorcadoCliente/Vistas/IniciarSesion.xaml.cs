@@ -11,7 +11,6 @@ namespace AhorcadoCliente.Vistas
 {
     public partial class IniciarSesion : Window
     {
-        private MainWindow mainWindow;
         public IniciarSesion()
         {
             InitializeComponent();

@@ -214,6 +214,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AbandonarPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idJugador" type="xs:int" />
+        <xs:element minOccurs="0" name="idPartida" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbandonarPartidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AbandonarPartidaResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarJugadorUnido">
     <xs:complexType>
       <xs:sequence>
