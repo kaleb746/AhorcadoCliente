@@ -15,7 +15,7 @@
     <sys:String x:Key="Glb_Ingles">Inglés</sys:String>
     <sys:String x:Key="InicioSesion_Boton_Iniciar">Iniciar sesión</sys:String>
     <sys:String x:Key="InicioSesion_Boton_Registrar">¿No tienes cuenta? Regístrate</sys:String>
-    <sys:String x:Key="Msg_Error_InicioSesion">Usuario o contraseña incorrectos</sys:String>
+    <sys:String x:Key="Msg_Error_InicioSesion">Usuario y/o contraseña incorrectos</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorInicioSesion">Error de inicio de sesión</sys:String>
     <sys:String x:Key="Msg_Bienvenida">¡Bienvenido, {0}!</sys:String>
     <sys:String x:Key="Msg_Titulo_Bienvenida">Inicio exitoso</sys:String>
@@ -85,8 +85,8 @@
     <sys:String x:Key="Msg_Descripcion_ErrorSesion">No se encontró la sesión del jugador.</sys:String>
     <sys:String x:Key="Msg_Titulo_Error">Error</sys:String>
     <sys:String x:Key="Msg_Descripcion_ErrorHistorial">Error al cargar el historial: {0}</sys:String>
-    <sys:String x:Key="Historial_Resultado_Ganaste">Ganaste</sys:String>
-    <sys:String x:Key="Historial_Resultado_Perdiste">Perdiste</sys:String>
+    <sys:String x:Key="Msg_Titulo_Victoria">¡Victoria!</sys:String>
+    <sys:String x:Key="Msg_Titulo_Derrota">Derrota</sys:String>
 
     <sys:String x:Key="CrearPartida_Titulo">Crear partida</sys:String>
     <sys:String x:Key="CrearPartida_Descripcion">Llene todos los campos para continuar</sys:String>

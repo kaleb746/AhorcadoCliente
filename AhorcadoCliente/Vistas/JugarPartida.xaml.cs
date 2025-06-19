@@ -143,8 +143,8 @@ namespace AhorcadoCliente.Vistas
         }
         public void MostrarFinPartida(bool gano, string mensaje)
         {
-            MessageBox.Show(mensaje, gano ? "¡Victoria!" : "Derrota", MessageBoxButton.OK,
-                            gano ? MessageBoxImage.Information : MessageBoxImage.Warning);
+            MessageDialog.Show( gano ? "Msg_Titulo_Victoria" : "Msg_Titulo_Derrota", mensaje, gano ? MessageDialog.DialogType.INFO : 
+                MessageDialog.DialogType.WARNING,this);
 
             foreach (var boton in FindVisualChildren<Button>(this))
             {
@@ -182,7 +182,32 @@ namespace AhorcadoCliente.Vistas
 
         private void btnClicAbandonar(object sender, RoutedEventArgs e)
         {
+            var resultado = MessageBox.Show(
+                "¿Estás seguro que deseas abandonar la partida?. Si abandonas la partida seras el perdedor.",
+                "Confirmar abandono",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
 
+            if (resultado != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                _cliente.AbandonarPartida(_idJugador, _idPartida);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al abandonar la partida: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                var ventana = new MenuPrincipal();
+                ventana.Show();
+                this.Close();
+            }
         }
+
+
     }
 }

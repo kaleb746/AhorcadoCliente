@@ -16,7 +16,7 @@
     <sys:String x:Key="Glb_Ingles">English</sys:String>
     <sys:String x:Key="InicioSesion_Boton_Iniciar">Sign in</sys:String>
     <sys:String x:Key="InicioSesion_Boton_Registrar">Don't have an account? Sign up</sys:String>
-    <sys:String x:Key="Msg_Error_InicioSesion">Incorrect username or password</sys:String>
+    <sys:String x:Key="Msg_Error_InicioSesion">Incorrect username and/or password</sys:String>
     <sys:String x:Key="Msg_Titulo_ErrorInicioSesion">Login error</sys:String>
     <sys:String x:Key="Msg_Bienvenida">Welcome, {0}!</sys:String>
     <sys:String x:Key="Msg_Titulo_Bienvenida">Login successful</sys:String>
@@ -85,8 +85,9 @@
     <sys:String x:Key="Msg_Descripcion_ErrorSesion">Player session not found.</sys:String>
     <sys:String x:Key="Msg_Titulo_Error">Error</sys:String>
     <sys:String x:Key="Msg_Descripcion_ErrorHistorial">Error loading match history: {0}</sys:String>
-    <sys:String x:Key="Historial_Resultado_Ganaste">You won</sys:String>
-    <sys:String x:Key="Historial_Resultado_Perdiste">You lost</sys:String>
+    <sys:String x:Key="Msg_Titulo_Victoria">You won</sys:String>
+    <sys:String x:Key="Msg_Titulo_Derrota">You lost</sys:String>
+
 
     <sys:String x:Key="CrearPartida_Titulo">Create Game</sys:String>
     <sys:String x:Key="CrearPartida_Descripcion">Fill in all fields to continue</sys:String>

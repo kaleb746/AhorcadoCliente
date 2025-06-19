@@ -1,7 +1,6 @@
 ﻿<Window x:Class="AhorcadoCliente.Vistas.JugarPartida"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Jugar Partida"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Width="900" Height="566">

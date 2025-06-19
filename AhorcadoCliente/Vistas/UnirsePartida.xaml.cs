@@ -13,7 +13,6 @@ namespace AhorcadoCliente.Vistas
     public partial class UnirsePartida : Window
     {
         private GestorPrincipalClient _client;
-        private InstanceContext _context;
 
         public UnirsePartida()
         {
