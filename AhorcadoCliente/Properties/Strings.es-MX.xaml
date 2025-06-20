@@ -74,6 +74,7 @@
     <sys:String x:Key="Ranking_Columna_Puntaje">Puntaje</sys:String>
     <sys:String x:Key="Ranking_Boton_Regresar">Regresar</sys:String>
     <sys:String x:Key="Msg_Descripcion_ErrorCargarRanking">Error al cargar el ranking: {0}</sys:String>
+    <sys:String x:Key="Ranking_PuntajeActual">Tu puntaje: {0}</sys:String>
 
     <sys:String x:Key="Historial_Titulo">Historial de Partidas</sys:String>
     <sys:String x:Key="Historial_Columna_Fecha">Fecha</sys:String>
@@ -81,6 +82,8 @@
     <sys:String x:Key="Historial_Columna_Dificultad">Dificultad</sys:String>
     <sys:String x:Key="Historial_Columna_Resultado">Resultado</sys:String>
     <sys:String x:Key="Historial_Boton_Regresar">Regresar</sys:String>
+    <sys:String x:Key="Historial_Resultado_Ganaste">Ganaste</sys:String>
+    <sys:String x:Key="Historial_Resultado_Perdiste">Perdiste</sys:String>
 
     <sys:String x:Key="Msg_Descripcion_ErrorSesion">No se encontró la sesión del jugador.</sys:String>
     <sys:String x:Key="Msg_Titulo_Error">Error</sys:String>
@@ -130,4 +133,10 @@
     <sys:String x:Key="JugarPartida_Pista">Pista</sys:String>
     <sys:String x:Key="Msg_Titulo_Pista">Pista</sys:String>
     <sys:String x:Key="Msg_Descripcion_SinPista">No hay pista disponible para esta palabra.</sys:String>
+
+    <sys:String x:Key="Msg_Titulo_ConfirmarAbandono">Confirmar abandono</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ConfirmarAbandono">¿Estás seguro que deseas abandonar la partida? Serás declarado perdedor.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SinPartidaActiva">No se encontró una partida activa para abandonar.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorAbandono">Error al abandonar la partida: {0}</sys:String>
+
 </ResourceDictionary>

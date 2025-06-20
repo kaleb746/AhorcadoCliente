@@ -75,6 +75,7 @@
     <sys:String x:Key="Ranking_Columna_Puntaje">Score</sys:String>
     <sys:String x:Key="Ranking_Boton_Regresar">Back</sys:String>
     <sys:String x:Key="Msg_Descripcion_ErrorCargarRanking">Error loading ranking: {0}</sys:String>
+    <sys:String x:Key="Ranking_PuntajeActual">Your score: {0}</sys:String>
 
     <sys:String x:Key="Historial_Titulo">Match History</sys:String>
     <sys:String x:Key="Historial_Columna_Fecha">Date</sys:String>
@@ -87,7 +88,8 @@
     <sys:String x:Key="Msg_Descripcion_ErrorHistorial">Error loading match history: {0}</sys:String>
     <sys:String x:Key="Msg_Titulo_Victoria">You won</sys:String>
     <sys:String x:Key="Msg_Titulo_Derrota">You lost</sys:String>
-
+    <sys:String x:Key="Historial_Resultado_Ganaste">You won</sys:String>
+    <sys:String x:Key="Historial_Resultado_Perdiste">You lost</sys:String>
 
     <sys:String x:Key="CrearPartida_Titulo">Create Game</sys:String>
     <sys:String x:Key="CrearPartida_Descripcion">Fill in all fields to continue</sys:String>
@@ -131,4 +133,9 @@
     <sys:String x:Key="JugarPartida_Pista">Clue</sys:String>
     <sys:String x:Key="Msg_Titulo_Pista">Clue</sys:String>
     <sys:String x:Key="Msg_Descripcion_SinPista">No clue available for this word.</sys:String>
+
+    <sys:String x:Key="Msg_Titulo_ConfirmarAbandono">Confirm Leave</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ConfirmarAbandono">Are you sure you want to leave the game? You will be marked as the loser.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_SinPartidaActiva">No active game found to abandon.</sys:String>
+    <sys:String x:Key="Msg_Descripcion_ErrorAbandono">Error leaving the game: {0}</sys:String>
 </ResourceDictionary>

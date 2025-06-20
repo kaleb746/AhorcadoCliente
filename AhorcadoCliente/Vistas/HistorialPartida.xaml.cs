@@ -31,15 +31,17 @@ namespace AhorcadoCliente.Vistas
 
                 var historialDTO = cliente.ObtenerHistorialDeJugador(idJugador);
 
-                var historialLocal = historialDTO.Select(h => new Modelo.HistorialPartida
-                {
-                    Fecha = h.Fecha,
-                    Usuario = h.Usuario,
-                    Dificultad = TraducirDificultad(h.Dificultad),
-                    Resultado = h.Resultado == "Ganó"
-                        ? Application.Current.TryFindResource("Historial_Resultado_Ganaste")?.ToString() ?? "Ganaste"
-                        : Application.Current.TryFindResource("Historial_Resultado_Perdiste")?.ToString() ?? "Perdiste"
-                }).ToList();
+                var historialLocal = historialDTO
+                    .OrderByDescending(h => h.Fecha)
+                    .Select(h => new Modelo.HistorialPartida
+                    {
+                        Fecha = h.Fecha,
+                        Usuario = h.Usuario,
+                        Dificultad = TraducirDificultad(h.Dificultad),
+                        Resultado = h.Resultado == "Ganó"
+                            ? Application.Current.TryFindResource("Historial_Resultado_Ganaste")?.ToString() ?? "Ganaste"
+                            : Application.Current.TryFindResource("Historial_Resultado_Perdiste")?.ToString() ?? "Perdiste"
+                    }).ToList();
 
                 PartidasDataGrid.ItemsSource = historialLocal;
             }

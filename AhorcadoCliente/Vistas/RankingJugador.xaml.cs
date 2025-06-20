@@ -16,6 +16,13 @@ namespace AhorcadoCliente.Vistas
         {
             InitializeComponent();
             CargarRanking();
+            if (SesionActual.JugadorActual != null)
+            {
+                int puntaje = SesionActual.JugadorActual.Puntaje;
+
+                string plantilla = Application.Current.TryFindResource("Ranking_PuntajeActual")?.ToString() ?? "Tu puntaje: {0}";
+                txtPuntajeActual.Text = string.Format(plantilla, puntaje);
+            }
         }
 
         private async void CargarRanking()

@@ -183,7 +183,9 @@ namespace AhorcadoCliente.Vistas
         private void btnClicAbandonar(object sender, RoutedEventArgs e)
         {
             var resultado = MessageBox.Show(
-                "¿Estás seguro que deseas abandonar la partida?. Si abandonas la partida seras el perdedor.",
+                Application.Current.TryFindResource("Msg_Descripcion_ConfirmarAbandono")?.ToString() ??
+                "¿Estás seguro que deseas abandonar la partida? Serás declarado perdedor.",
+                Application.Current.TryFindResource("Msg_Titulo_ConfirmarAbandono")?.ToString() ??
                 "Confirmar abandono",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question
@@ -198,7 +200,7 @@ namespace AhorcadoCliente.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al abandonar la partida: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorAbandono", MessageDialog.DialogType.ERROR, this, ex.Message);
             }
             finally
             {
@@ -207,7 +209,5 @@ namespace AhorcadoCliente.Vistas
                 this.Close();
             }
         }
-
-
     }
 }

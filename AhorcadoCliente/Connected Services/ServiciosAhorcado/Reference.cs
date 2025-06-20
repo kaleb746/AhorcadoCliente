@@ -849,6 +849,12 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/AbandonarPartida", ReplyAction="http://tempuri.org/IPartidaManager/AbandonarPartidaResponse")]
         System.Threading.Tasks.Task<int> AbandonarPartidaAsync(int idJugador, int idPartida);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugador", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugadorResponse")]
+        int ObtenerPartidaActivaDeJugador(int idJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugador", ReplyAction="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugadorResponse")]
+        System.Threading.Tasks.Task<int> ObtenerPartidaActivaDeJugadorAsync(int idJugador);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestorPrincipal/Ping", ReplyAction="http://tempuri.org/IGestorPrincipal/PingResponse")]
         bool Ping();
         
@@ -1023,6 +1029,14 @@ namespace AhorcadoCliente.ServiciosAhorcado {
         
         public System.Threading.Tasks.Task<int> AbandonarPartidaAsync(int idJugador, int idPartida) {
             return base.Channel.AbandonarPartidaAsync(idJugador, idPartida);
+        }
+        
+        public int ObtenerPartidaActivaDeJugador(int idJugador) {
+            return base.Channel.ObtenerPartidaActivaDeJugador(idJugador);
+        }
+        
+        public System.Threading.Tasks.Task<int> ObtenerPartidaActivaDeJugadorAsync(int idJugador) {
+            return base.Channel.ObtenerPartidaActivaDeJugadorAsync(idJugador);
         }
         
         public bool Ping() {
