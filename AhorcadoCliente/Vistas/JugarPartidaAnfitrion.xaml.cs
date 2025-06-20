@@ -15,6 +15,7 @@ namespace AhorcadoCliente.Vistas
         public JugarPartidaAnfitrion()
         {
             InitializeComponent();
+            ActualizarDibujoAhorcado();
         }
 
         public void MostrarPalabra(string palabraParcial)
@@ -35,7 +36,7 @@ namespace AhorcadoCliente.Vistas
 
         public void ActualizarDibujoAhorcado()
         {
-            int intento = Math.Min(_errores + 1, 6); 
+            int intento = Math.Min(_errores, 6); 
             string ruta = $"/AhorcadoCliente;component/Recursos/Iconos/Dibujo_Intento{intento}.png";
             ImgAhorcado.Source = new BitmapImage(new Uri(ruta, UriKind.Relative));
         }

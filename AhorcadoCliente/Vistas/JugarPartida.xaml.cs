@@ -38,6 +38,7 @@ namespace AhorcadoCliente.Vistas
                     MostrarPalabra("_____");
 
                 AsignarEventosBotonesLetras();
+                ActualizarDibujoAhorcado();
             }
             catch (Exception ex)
             {
@@ -112,7 +113,7 @@ namespace AhorcadoCliente.Vistas
         }
         public void ActualizarDibujoAhorcado()
         {
-            int intento = Math.Min(_errores + 1, 6); // Limita el valor a 6
+            int intento = Math.Min(_errores, 7); 
             string ruta = $"/AhorcadoCliente;component/Recursos/Iconos/Dibujo_Intento{intento}.png";
             ImgAhorcado.Source = new BitmapImage(new Uri(ruta, UriKind.Relative));
         }
@@ -122,6 +123,7 @@ namespace AhorcadoCliente.Vistas
             _errores++;
             ActualizarDibujoAhorcado();
         }
+
         private static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
