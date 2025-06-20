@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AhorcadoCliente.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -77,10 +78,43 @@ namespace AhorcadoCliente.Vistas
                 }
             }
         }
-
         private void btnClicAbandonar(object sender, RoutedEventArgs e)
         {
+            var resultado = MessageBox.Show(
+                Application.Current.TryFindResource("Msg_Descripcion_ConfirmarAbandono")?.ToString() ??
+                "¿Estás seguro que deseas abandonar la partida? Serás declarado perdedor.",
+                Application.Current.TryFindResource("Msg_Titulo_ConfirmarAbandono")?.ToString() ??
+                "Confirmar abandono",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
 
+            if (resultado != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                var cliente = SesionActual.ClienteWCF;
+                int idJugador = SesionActual.JugadorActual.Id;
+                int idPartida = cliente.ObtenerPartidaActivaDeJugador(idJugador);
+
+                if (idPartida == 0)
+                {
+                    MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_SinPartidaActiva", MessageDialog.DialogType.ERROR, this);
+                    return;
+                }
+
+                cliente.AbandonarPartida(idJugador, idPartida);
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show("Msg_Titulo_Error", "Msg_Descripcion_ErrorAbandono", MessageDialog.DialogType.ERROR, this, ex.Message);
+            }
+            finally
+            {
+                var ventana = new MenuPrincipal();
+                ventana.Show();
+                this.Close();
+            }
         }
     }
 }

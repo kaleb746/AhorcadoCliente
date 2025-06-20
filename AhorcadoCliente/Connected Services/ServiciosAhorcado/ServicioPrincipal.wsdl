@@ -132,6 +132,12 @@
   <wsdl:message name="IGestorPrincipal_AbandonarPartida_OutputMessage">
     <wsdl:part name="parameters" element="tns:AbandonarPartidaResponse" />
   </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPartidaActivaDeJugador_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPartidaActivaDeJugador" />
+  </wsdl:message>
+  <wsdl:message name="IGestorPrincipal_ObtenerPartidaActivaDeJugador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPartidaActivaDeJugadorResponse" />
+  </wsdl:message>
   <wsdl:message name="IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarJugadorUnido" />
   </wsdl:message>
@@ -211,6 +217,10 @@
     <wsdl:operation name="AbandonarPartida">
       <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/AbandonarPartida" message="tns:IGestorPrincipal_AbandonarPartida_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/AbandonarPartidaResponse" message="tns:IGestorPrincipal_AbandonarPartida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPartidaActivaDeJugador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugador" message="tns:IGestorPrincipal_ObtenerPartidaActivaDeJugador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugadorResponse" message="tns:IGestorPrincipal_ObtenerPartidaActivaDeJugador_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarJugadorUnido">
       <wsdl:output wsaw:Action="http://tempuri.org/IPartidaManager/NotificarJugadorUnido" message="tns:IGestorPrincipal_NotificarJugadorUnido_OutputCallbackMessage" />
@@ -366,6 +376,15 @@
     </wsdl:operation>
     <wsdl:operation name="AbandonarPartida">
       <soap12:operation soapAction="http://tempuri.org/IPartidaManager/AbandonarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPartidaActivaDeJugador">
+      <soap12:operation soapAction="http://tempuri.org/IPartidaManager/ObtenerPartidaActivaDeJugador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
